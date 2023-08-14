@@ -34,10 +34,12 @@
 // updated to be consistent with this convention.
 //
 
-#version 330
+#version ogre_glsl_ver_330
 
-in vec4 vertex;
-in vec4 uv0;
+vulkan_layout( OGRE_POSITION ) in vec4 vertex;
+vulkan_layout( OGRE_TEXCOORD0 ) in vec4 uv0;
+
+vulkan( layout( ogre_P0 ) uniform Params { )
 uniform mat4 worldviewproj_matrix;
 
 /////////// Input parameters //////////
@@ -57,7 +59,10 @@ uniform vec2 dir1;
 uniform vec2 dir2;
 uniform float tau;
 
+vulkan( }; )
+
 /////////// Output variables to fragment shader //////////
+vulkan_layout( location = 0 )
 out block
 {
   mat3 rotMatrix;
@@ -77,8 +82,6 @@ struct WaveParameters {
   vec2 d;       // horizontal direction of wave
   float q;      // steepness for Gerstner wave (q=0: rolling sine waves)
 };
-
-
 
 out gl_PerVertex
 {
