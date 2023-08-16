@@ -17,18 +17,18 @@
 
 ////////// Input parameters //////////
 // Textures
-vulkan_layout( ogre_t0 ) uniform textureCube cubeMap;
-vulkan_layout( ogre_t1 ) uniform texture2D bumpMap;
+vulkan_layout( ogre_t0 ) uniform texture2D bumpMap;
+vulkan_layout( ogre_t1 ) uniform textureCube cubeMap;
 
-vulkan( layout( ogre_s0 ) uniform sampler cubeSampler );
-vulkan( layout( ogre_s1 ) uniform sampler texSampler );
+vulkan( layout( ogre_s0 ) uniform sampler texSampler0 );
+vulkan( layout( ogre_s1 ) uniform sampler texSampler1 );
 
 // Colors
 vulkan( layout( ogre_P0 ) uniform Params { )
-uniform vec4 deepColor;
-uniform vec4 shallowColor;
-uniform float fresnelPower;
-uniform float hdrMultiplier;
+  uniform vec4 deepColor;
+  uniform vec4 shallowColor;
+  uniform float fresnelPower;
+  uniform float hdrMultiplier;
 vulkan( }; )
 
 ////////// Input computed in vertex shader //////////
@@ -46,14 +46,15 @@ out vec4 fragColor;
 void main()
 {
   // Apply bump mapping to normal vector to make waves look more detailed:
-  vec4 bump = texture(vkSampler2D(bumpMap, texSampler), inPs.bumpCoord)*2.0 - 1.0;
+  vec4 bump = texture(vkSampler2D(bumpMap, texSampler0),
+                      inPs.bumpCoord)*2.0 - 1.0;
   vec3 N = normalize(inPs.rotMatrix * bump.xyz);
 
   // Reflected ray:
   vec3 E = normalize(inPs.eyeVec);
   vec3 R = reflect(E, N);
 
-  // negate z for use with the skybox texture that comes with ign-rendering
+  // negate z for use with the skybox texture that comes with gz-rendering
   R = vec3(R.x, R.y, -R.z);
 
   // uncomment this line if using other textures that are Y up
@@ -61,7 +62,7 @@ void main()
   // R = vec3(R.x, R.z, R.y);
 
   // Get environment color of reflected ray:
-  vec4 envColor = texture(vkSamplerCube(cubeMap, cubeSampler), R, 0.0);
+  vec4 envColor = texture(vkSamplerCube(cubeMap, texSampler1), R, 0.0);
 
   // Cheap hdr effect:
   envColor.rgb *= (envColor.r+envColor.g+envColor.b)*hdrMultiplier;

@@ -32,7 +32,11 @@
 //
 // The derivative terms (Tangent, Binormal, Normal) have been
 // updated to be consistent with this convention.
-//
+
+
+// original concept:
+// https://developer.nvidia.com/gpugems/gpugems/part-i-natural-effects/chapter-1-effective-water-simulation-physical-models
+
 
 #version ogre_glsl_ver_330
 
@@ -40,25 +44,24 @@ vulkan_layout( OGRE_POSITION ) in vec4 vertex;
 vulkan_layout( OGRE_TEXCOORD0 ) in vec4 uv0;
 
 vulkan( layout( ogre_P0 ) uniform Params { )
-uniform mat4 worldviewproj_matrix;
+  uniform mat4 worldviewproj_matrix;
 
-/////////// Input parameters //////////
-// Waves
-uniform int Nwaves;
-uniform vec3 camera_position_object_space;
-uniform float rescale;
-uniform vec2 bumpScale;
-uniform vec2 bumpSpeed;
-uniform float t;
-uniform vec3 amplitude;
-uniform vec3 wavenumber;
-uniform vec3 omega;
-uniform vec3 steepness;
-uniform vec2 dir0;
-uniform vec2 dir1;
-uniform vec2 dir2;
-uniform float tau;
-
+  /////////// Input parameters //////////
+  // Waves
+  uniform int Nwaves;
+  uniform vec3 camera_position_object_space;
+  uniform float rescale;
+  uniform vec2 bumpScale;
+  uniform vec2 bumpSpeed;
+  uniform float t;
+  uniform vec3 amplitude;
+  uniform vec3 wavenumber;
+  uniform vec3 omega;
+  uniform vec3 steepness;
+  uniform vec2 dir0;
+  uniform vec2 dir1;
+  uniform vec2 dir2;
+  uniform float tau;
 vulkan( }; )
 
 /////////// Output variables to fragment shader //////////
