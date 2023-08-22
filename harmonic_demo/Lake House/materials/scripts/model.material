@@ -1,96 +1,5 @@
 
-material Fallback/51
-{
-  technique
-  {
-    pass
-    {
-      texture_unit
-      {
-        texture TreeBillboard_Pine_HS.png
-        }
-      }
-    }
-  }
-material Fallback/41
-{
-  technique
-  {
-    pass
-    {
-      texture_unit
-      {
-        texture Rock01_Albedo.png
-        }
-      }
-    }
-  }
-material Fallback/50
-{
-  technique
-  {
-    pass
-    {
-      texture_unit
-      {
-        texture Siding_Albedo.png
-        }
-      }
-    }
-  }
-material Fallback/58
-{
-  technique
-  {
-    pass
-    {
-      texture_unit
-      {
-        texture White.png
-        }
-      }
-    }
-  }
-material Fallback/62
-{
-  technique
-  {
-    pass
-    {
-      texture_unit
-      {
-        texture Grey.png
-        }
-      }
-    }
-  }
-material Fallback/49
-{
-  technique
-  {
-    pass
-    {
-      texture_unit
-      {
-        texture Roof_Albedo.png
-        }
-      }
-    }
-  }
-material Fallback/39
-{
-  technique
-  {
-    pass
-    {
-      texture_unit
-      {
-        texture Deck_Albedo.png
-        }
-      }
-    }
-  }
-material Fallback/38
+material Fallback/ConcreteTiles_Diffuse
 {
   technique
   {
@@ -103,7 +12,7 @@ material Fallback/38
       }
     }
   }
-material Fallback/60
+material Fallback/Siding_Diffuse
 {
   technique
   {
@@ -111,12 +20,12 @@ material Fallback/60
     {
       texture_unit
       {
-        texture Grey.png
+        texture Siding_Albedo.png
         }
       }
     }
   }
-material Fallback/37
+material Fallback/WhiteWood_Diffuse
 {
   technique
   {
@@ -124,12 +33,12 @@ material Fallback/37
     {
       texture_unit
       {
-        texture Bush01_Albedo.png
+        texture WhiteWood_Albedo.png
         }
       }
     }
   }
-material Fallback/40
+material Fallback/Roof_Diffuse
 {
   technique
   {
@@ -137,12 +46,12 @@ material Fallback/40
     {
       texture_unit
       {
-        texture Log_Albedo.png
+        texture Roof_Albedo.png
         }
       }
     }
   }
-material Fallback/42
+material Fallback/Brick_Diffuse
 {
   technique
   {
@@ -150,12 +59,12 @@ material Fallback/42
     {
       texture_unit
       {
-        texture Bark_Albedo.png
+        texture Brick_Albedo.png
         }
       }
     }
   }
-material Fallback/43
+material Fallback/Deck_Diffuse
 {
   technique
   {
@@ -163,12 +72,103 @@ material Fallback/43
     {
       texture_unit
       {
-        texture TreeJeffreyPine_Albedo.png
+        texture Deck_Albedo.png
         }
       }
     }
   }
-material Fallback/53
+material Fallback/Stairs_Diffuse
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture Stairs_Albedo.png
+        }
+      }
+    }
+  }
+material Fallback/Baseboard_Diffuse
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture Baseboard_Albedo.png
+        }
+      }
+    }
+  }
+material Fallback/StainlessSteel_Diffuse
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture StainlessSteel_Albedo.png
+        }
+      }
+    }
+  }
+material Fallback/Cabinets_Diffuse
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture Cabinets_Albedo.jpeg
+        }
+      }
+    }
+  }
+material Fallback/Fireplace_Diffuse
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture Fireplace_Albedo.png
+        }
+      }
+    }
+  }
+material Fallback/Counter_Diffuse
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture Counter_Albedo.png
+        }
+      }
+    }
+  }
+material Fallback/WallBeige_Diffuse
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture WallBeige_Albedo.png
+        }
+      }
+    }
+  }
+material Fallback/Glass_Diffuse
 {
   technique
   {
@@ -181,7 +181,7 @@ material Fallback/53
       }
     }
   }
-material Fallback/44
+material Fallback/Cobblestone_Diffuse
 {
   technique
   {
@@ -194,7 +194,7 @@ material Fallback/44
       }
     }
   }
-material Fallback/45
+material Fallback/Floor_Diffuse
 {
   technique
   {
@@ -207,7 +207,7 @@ material Fallback/45
       }
     }
   }
-material Fallback/46
+material Fallback/WallWhite_Diffuse
 {
   technique
   {
@@ -215,38 +215,12 @@ material Fallback/46
     {
       texture_unit
       {
-        texture Rock02_Albedo.png
+        texture WallWhite_Albedo.png
         }
       }
     }
   }
-material Fallback/47
-{
-  technique
-  {
-    pass
-    {
-      texture_unit
-      {
-        texture RockPile_Albedo.png
-        }
-      }
-    }
-  }
-material Fallback/48
-{
-  technique
-  {
-    pass
-    {
-      texture_unit
-      {
-        texture Stump_Albedo.png
-        }
-      }
-    }
-  }
-material Fallback/64
+material Fallback/Hedge
 {
   technique
   {
