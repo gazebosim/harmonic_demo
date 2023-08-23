@@ -1,6 +1,15 @@
-<sdf version="1.6">
-  <world name="ModelTest">
-    <gravity>0 0 0</gravity>
+<?xml version="1.0" ?>
+
+<sdf version="1.9">
+  <world name="harmonic">
+    <physics name="1ms" type="ignored">
+      <dart>
+        <!-- Heightmaps behave better with the bullet collision detector -->
+        <collision_detector>bullet</collision_detector>
+      </dart>
+    </physics>
+
+    <gravity>0 0 -9.8</gravity>
     <scene>
       <ambient>1 1 1</ambient>
       <grid>false</grid>

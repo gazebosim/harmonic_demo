@@ -1,8 +1,17 @@
 <?xml version="1.0" ?>
 <sdf version="1.6">
-  <model name="fortress_heightmap">
+  <model name="harmonic_heightmap">
     <static>true</static>
     <link name="link">
+      <collision name="collision">
+        <pose>0 -300 -5 0 0 0</pose>
+        <geometry>
+          <heightmap>
+            <uri>materials/textures/Heightmap.png</uri>
+            <size>1200 1200 600</size>
+          </heightmap>
+        </geometry>
+      </collision>
       <visual name="visual">
         <geometry>
           <heightmap>
