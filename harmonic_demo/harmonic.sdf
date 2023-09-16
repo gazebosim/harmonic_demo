@@ -58,6 +58,7 @@
       <uri>Lake House</uri>
       <pose>0 0 0 0 0 0</pose>
     </include>
+
     <include>
       <name>Water</name>
       <uri>Coast Waves 2</uri>
@@ -155,6 +156,11 @@
       <pose>0 0 0 0 0 2.6</pose>
       <name>Sky</name>
       <uri>Sky</uri>
+    </include>
+    <include>
+      <pose>0.52 2.07 10.24 0 0 -0.94</pose>
+      <name>Harmonic Mascot</name>
+      <uri>Harmonic Mascot</uri>
     </include>
 
     <model name="camera">
