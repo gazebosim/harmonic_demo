@@ -13,15 +13,16 @@
 # limitations under the License.
 
 from gz.sim8 import Model, Link, Joint
+from gz.transport13 import Node
+from gz.msgs10.double_pb2 import Double
 import numpy as np
+from threading import Lock
 from . import lqr_controller
 
 # Ideas:
-# - Topic to reset initial angle
 # - Put controller code in another module and provide a gz-transport service to
 # reload it, so we can easily tune gains.
 # - Publish state and plot it
-# -
 
 class CartPoleSystem(object):
 
@@ -51,6 +52,14 @@ class CartPoleSystem(object):
         self.controller = lqr_controller.LqrController(mass_cart,
                 mass_point_mass, pole_length)
 
+        self.node = Node()
+        reset_angle_topic = sdf.get_string("reset_angle_topic", "reset_angle")[0]
+        print("Subscribing to", reset_angle_topic)
+        self.node.subscribe(Double, reset_angle_topic, self.reset_angle_cb)
+
+        self.new_reset_angle = None
+        self.reset_angle_lock = Lock()
+
 
     def pre_update(self, info, ecm):
         if info.paused:
@@ -59,16 +68,26 @@ class CartPoleSystem(object):
         if len(self.cart_joint.position(ecm)) == 0:
             return
 
+        with self.reset_angle_lock:
+            if self.new_reset_angle is not None:
+                self.pole_joint.reset_position(ecm, [self.new_reset_angle])
+                self.new_reset_angle = None
+
         x = np.array([
             self.cart_joint.position(ecm)[0],
             self.cart_joint.velocity(ecm)[0],
             self.pole_joint.position(ecm)[0],
             self.pole_joint.velocity(ecm)[0]
         ])
+        print(x)
 
         u = self.controller.compute(x)
 
         self.cart_joint.set_force(ecm, [u])
+
+    def reset_angle_cb(self, msg):
+        with self.reset_angle_lock:
+            self.new_reset_angle = msg.data
 
 
 def get_system():

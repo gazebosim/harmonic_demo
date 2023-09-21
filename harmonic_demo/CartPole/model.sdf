@@ -154,6 +154,7 @@
     <plugin filename="gz-sim-python-system-loader-system" name="gz::sim::systems::PythonSystemLoader">
       <module_name>cart_pole_controller</module_name>
       <initial_angle>0.5</initial_angle>
+      <reset_angle_topic>cart_pole/reset_angle</reset_angle_topic>
     </plugin>
   </model>
 </sdf>
