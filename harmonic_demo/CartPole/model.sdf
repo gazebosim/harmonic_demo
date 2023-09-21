@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sdf version="1.11">
+  <model name="cart_pole">
+    <joint name="fix_to_world" type="fixed">
+      <parent>world</parent>
+      <child>base</child>
+    </joint>
+
+    <link name="base">
+      <visual name="lower_limit">
+        <pose>-1.15 0 0   0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.1 0.1 0.1</size>
+          </box>
+        </geometry>
+        <material>
+          <diffuse>0.0 1.0 0.0</diffuse>
+          <specular>1.0 1.0 1.0</specular>
+        </material>
+      </visual>
+      <visual name="upper_limit">
+        <pose>1.15 0 0   0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.1 0.1 0.1</size>
+          </box>
+        </geometry>
+        <material>
+          <diffuse>0.0 1.0 0.0</diffuse>
+          <specular>1.0 1.0 1.0</specular>
+        </material>
+      </visual>
+    </link>
+    <joint name="cart_joint" type="prismatic">
+      <parent>base</parent>
+      <child>cart</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-1</lower>
+          <upper>1</upper>
+        </limit>
+        <dynamics>
+          <damping>0.001</damping>
+        </dynamics>
+      </axis>
+    </joint>
+
+    <link name="cart">
+      <inertial auto="true"/>
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.2 0.1 0.1</size>
+          </box>
+        </geometry>
+        <material>
+          <diffuse>1.0 0.0 0.0</diffuse>
+          <specular>1.0 1.0 1.0</specular>
+        </material>
+      </visual>
+      <collision name="collision">
+        <density>100</density>
+        <geometry>
+          <box>
+            <size>0.2 0.1 0.1</size>
+          </box>
+        </geometry>
+      </collision>
+    </link>
+
+    <joint name="pole_joint" type="revolute">
+      <pose relative_to="cart"/>
+      <parent>cart</parent>
+      <child>pole</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+
+        <dynamics>
+          <damping>0.001</damping>
+        </dynamics>
+      </axis>
+    </joint>
+
+    <link name="pole">
+      <pose>0 0.07 0.4   0 0 0</pose>
+      <inertial auto="true"/>
+      <visual name="visual">
+        <geometry>
+          <cylinder>
+            <length>0.8</length>
+            <radius>0.02</radius>
+          </cylinder>
+        </geometry>
+        <material>
+          <diffuse>1.0 1.0 1.0</diffuse>
+          <specular>1.0 1.0 1.0</specular>
+        </material>
+      </visual>
+      <collision name="collision">
+        <density>100</density>
+        <geometry>
+          <cylinder>
+            <length>0.4</length>
+            <radius>0.02</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+    </link>
+
+    <plugin filename="gz-sim-python-system-loader-system" name="gz::sim::systems::PythonSystemLoader">
+      <module_name>cart_pole_controller</module_name>
+      <force>50</force>
+    </plugin>
+  </model>
+</sdf>
+
