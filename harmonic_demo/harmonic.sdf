@@ -19,8 +19,7 @@
           <near>0.25</near>
           <far>50000</far>
         </camera_clip>
-        <!--<camera_pose>-23 -45.4 34.5 0.0 0.54 1.11</camera_pose>-->
-        <camera_pose>-1.27 -0.56 8.87  0 0.55 -2.67</camera_pose>
+        <camera_pose>-23 -45.4 34.5 0.0 0.54 1.11</camera_pose>
       </plugin>
 
       <!-- Plugins that add functionality to the scene -->
@@ -279,7 +278,7 @@
 
     <gravity>0 0 -9.8</gravity>
     <scene>
-      <ambient>1 1 1</ambient>
+      <ambient>0.1 0.1 0.1</ambient>
       <grid>false</grid>
       <sky></sky>
     </scene>
@@ -308,144 +307,144 @@
       <pose>0 0 0 0 0 0</pose>
     </include>
 
-    <!--<include>-->
-    <!--  <name>Water</name>-->
-    <!--  <uri>Coast Waves 2</uri>-->
-    <!--  <pose>0 0 0 0 0 0</pose>-->
-    <!--</include>-->
-    <!--<include>-->
-    <!--  <name>Terrain</name>-->
-    <!--  <uri>Terrain</uri>-->
-    <!--</include>-->
-    <!--<include>-->
-    <!--  <name>Terrain Objects</name>-->
-    <!--  <uri>Terrain Objects</uri>-->
-    <!--</include>-->
-    <!--<include>-->
-    <!--  <name>Armchair_01</name>-->
-    <!--  <pose>-0.24 -0.13 6.90 0 0 -0.77</pose>-->
-    <!--  <uri>Armchair</uri>-->
-    <!--</include>-->
-    <!--<include>-->
-    <!--  <name>Armchair_02</name>-->
-    <!--  <pose>-0.12 -1.44 6.90 0 0 -1.75</pose>-->
-    <!--  <uri>Armchair</uri>-->
-    <!--</include>-->
-    <!--<include>-->
-    <!--  <pose>5.46 -1.63 9.46 0 0 -1.57</pose>-->
-    <!--  <name>Bathtub</name>-->
-    <!--  <uri>Bathtub</uri>-->
-    <!--</include>-->
-    <!--<include>-->
-    <!--  <pose>0.14 -1.62 9.46 0 0 3.14</pose>-->
-    <!--  <name>Bed</name>-->
-    <!--  <uri>Bed</uri>-->
-    <!--</include>-->
-    <!--<include>-->
-    <!--  <pose>3.45 -3.88 6.90 0 0 -1.57</pose>-->
-    <!--  <name>Dining Table</name>-->
-    <!--  <uri>Dining Table</uri>-->
-    <!--</include>-->
-    <!--<include>-->
-    <!--  <pose>2.9 -3.34 6.90 0 0 -0.03</pose>-->
-    <!--  <name>Dining Chair 01</name>-->
-    <!--  <uri>Dining Chair</uri>-->
-    <!--</include>-->
-    <!--<include>-->
-    <!--  <pose>3.87 -3.19 6.90 0 0 -0.32</pose>-->
-    <!--  <name>Dining Chair 02</name>-->
-    <!--  <uri>Dining Chair</uri>-->
-    <!--</include>-->
-    <!--<include>-->
-    <!--  <pose>3.81 -4.43 6.90 0 0 -2.69</pose>-->
-    <!--  <name>Dining Chair 03</name>-->
-    <!--  <uri>Dining Chair</uri>-->
-    <!--</include>-->
-    <!--<include>-->
-    <!--  <pose>2.88 -4.60 6.90 0 0 2.87</pose>-->
-    <!--  <name>Dining Chair 04</name>-->
-    <!--  <uri>Dining Chair</uri>-->
-    <!--</include>-->
-    <!--<include>-->
-    <!--  <pose>1.75 -3.89 6.90 0 0 0</pose>-->
-    <!--  <name>Fridge</name>-->
-    <!--  <uri>Fridge</uri>-->
-    <!--</include>-->
-    <!--<include>-->
-    <!--  <pose>4.34 -6.36 6.83 0 0 1.57</pose>-->
-    <!--  <name>Oven</name>-->
-    <!--  <uri>Oven</uri>-->
-    <!--</include>-->
-    <!--<include>-->
-    <!--  <pose>2.75 -1.79 9.46 0 0 1.57</pose>-->
-    <!--  <name>Toilet</name>-->
-    <!--  <uri>Toilet</uri>-->
-    <!--</include>-->
-    <!--<include>-->
-    <!--  <pose>3.03 0.49 9.46 0 0 1.57</pose>-->
-    <!--  <name>Vanity</name>-->
-    <!--  <uri>Vanity</uri>-->
-    <!--</include>-->
-    <!--<include>-->
-    <!--  <pose>-0.39 2.31 9.48 0 0 -1.57</pose>-->
-    <!--  <name>Desk</name>-->
-    <!--  <uri>Desk</uri>-->
-    <!--</include>-->
-    <!--<include>-->
-    <!--  <pose>-0.74 1.45 9.48 0 0 -0.81</pose>-->
-    <!--  <name>Office Chair</name>-->
-    <!--  <uri>Office Chair</uri>-->
-    <!--</include>-->
-    <!--<include>-->
-    <!--  <pose>2.98 0.85 6.91 0 0 -2.37</pose>-->
-    <!--  <name>Piano</name>-->
-    <!--  <uri>Piano</uri>-->
-    <!--</include>-->
-    <!--<include>-->
-    <!--  <pose>0 0 0 0 0 2.6</pose>-->
-    <!--  <name>Sky</name>-->
-    <!--  <uri>Sky</uri>-->
-    <!--</include>-->
-    <!--<include>-->
-    <!--  <pose>0.52 2.07 10.24 0 0 -0.94</pose>-->
-    <!--  <name>Harmonic Mascot</name>-->
-    <!--  <uri>Harmonic Mascot</uri>-->
-    <!--</include>-->
     <include>
-      <pose degrees="true">-1.77 -1.04 8.37   0 0 -90</pose>
+      <name>Water</name>
+      <uri>Coast Waves 2</uri>
+      <pose>0 0 0 0 0 0</pose>
+    </include>
+    <include>
+      <name>Terrain</name>
+      <uri>Terrain</uri>
+    </include>
+    <include>
+      <name>Terrain Objects</name>
+      <uri>Terrain Objects</uri>
+    </include>
+    <include>
+      <name>Armchair_01</name>
+      <pose>-0.24 -0.13 6.90 0 0 -0.77</pose>
+      <uri>Armchair</uri>
+    </include>
+    <include>
+      <name>Armchair_02</name>
+      <pose>-0.12 -1.44 6.90 0 0 -1.75</pose>
+      <uri>Armchair</uri>
+    </include>
+    <include>
+      <pose>5.46 -1.63 9.46 0 0 -1.57</pose>
+      <name>Bathtub</name>
+      <uri>Bathtub</uri>
+    </include>
+    <include>
+      <pose>0.14 -1.62 9.46 0 0 3.14</pose>
+      <name>Bed</name>
+      <uri>Bed</uri>
+    </include>
+    <include>
+      <pose>3.45 -3.88 6.90 0 0 -1.57</pose>
+      <name>Dining Table</name>
+      <uri>Dining Table</uri>
+    </include>
+    <include>
+      <pose>2.9 -3.34 6.90 0 0 -0.03</pose>
+      <name>Dining Chair 01</name>
+      <uri>Dining Chair</uri>
+    </include>
+    <include>
+      <pose>3.87 -3.19 6.90 0 0 -0.32</pose>
+      <name>Dining Chair 02</name>
+      <uri>Dining Chair</uri>
+    </include>
+    <include>
+      <pose>3.81 -4.43 6.90 0 0 -2.69</pose>
+      <name>Dining Chair 03</name>
+      <uri>Dining Chair</uri>
+    </include>
+    <include>
+      <pose>2.88 -4.60 6.90 0 0 2.87</pose>
+      <name>Dining Chair 04</name>
+      <uri>Dining Chair</uri>
+    </include>
+    <include>
+      <pose>1.75 -3.89 6.90 0 0 0</pose>
+      <name>Fridge</name>
+      <uri>Fridge</uri>
+    </include>
+    <include>
+      <pose>4.34 -6.36 6.83 0 0 1.57</pose>
+      <name>Oven</name>
+      <uri>Oven</uri>
+    </include>
+    <include>
+      <pose>2.75 -1.79 9.46 0 0 1.57</pose>
+      <name>Toilet</name>
+      <uri>Toilet</uri>
+    </include>
+    <include>
+      <pose>3.03 0.49 9.46 0 0 1.57</pose>
+      <name>Vanity</name>
+      <uri>Vanity</uri>
+    </include>
+    <include>
+      <pose>-0.39 2.31 9.48 0 0 -1.57</pose>
+      <name>Desk</name>
+      <uri>Desk</uri>
+    </include>
+    <include>
+      <pose>-0.74 1.45 9.48 0 0 -0.81</pose>
+      <name>Office Chair</name>
+      <uri>Office Chair</uri>
+    </include>
+    <include>
+      <pose>2.98 0.85 6.91 0 0 -2.37</pose>
+      <name>Piano</name>
+      <uri>Piano</uri>
+    </include>
+    <include>
+      <pose>0 0 0 0 0 2.6</pose>
+      <name>Sky</name>
+      <uri>Sky</uri>
+    </include>
+    <include>
+      <pose>0.52 2.07 10.24 0 0 -0.94</pose>
+      <name>Harmonic Mascot</name>
+      <uri>Harmonic Mascot</uri>
+    </include>
+    <include>
+      <pose degrees="true">-1.75 -1.04 8.37   0 0 -90</pose>
       <uri>CartPole</uri>
     </include>
 
-    <!--<model name="camera">-->
-    <!--  <static>true</static>-->
-    <!--  <pose>-9 -7.5 15 0.0, 0.4, 1.38</pose>-->
-    <!--  <link name="link">-->
-    <!--    <pose>0.05 0.05 0.05 0 0 0</pose>-->
-    <!--    <visual name="visual">-->
-    <!--      <geometry>-->
-    <!--        <box>-->
-    <!--          <size>0.1 0.1 0.1</size>-->
-    <!--        </box>-->
-    <!--      </geometry>-->
-    <!--    </visual>-->
-    <!--    <sensor name="camera" type="camera">-->
-    <!--      <camera>-->
-    <!--        <horizontal_fov>1.57</horizontal_fov>-->
-    <!--        <image>-->
-    <!--          <width>320</width>-->
-    <!--          <height>240</height>-->
-    <!--        </image>-->
-    <!--        <clip>-->
-    <!--          <near>0.1</near>-->
-    <!--          <far>100</far>-->
-    <!--        </clip>-->
-    <!--      </camera>-->
-    <!--      <always_on>1</always_on>-->
-    <!--      <update_rate>30</update_rate>-->
-    <!--      <visualize>true</visualize>-->
-    <!--    </sensor>-->
-    <!--  </link>-->
-    <!--</model>-->
+    <model name="camera">
+      <static>true</static>
+      <pose>-9 -7.5 15 0.0, 0.4, 1.38</pose>
+      <link name="link">
+        <pose>0.05 0.05 0.05 0 0 0</pose>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>0.1 0.1 0.1</size>
+            </box>
+          </geometry>
+        </visual>
+        <sensor name="camera" type="camera">
+          <camera>
+            <horizontal_fov>1.57</horizontal_fov>
+            <image>
+              <width>320</width>
+              <height>240</height>
+            </image>
+            <clip>
+              <near>0.1</near>
+              <far>100</far>
+            </clip>
+          </camera>
+          <always_on>1</always_on>
+          <update_rate>30</update_rate>
+          <visualize>true</visualize>
+        </sensor>
+      </link>
+    </model>
   </world>
 </sdf>
 

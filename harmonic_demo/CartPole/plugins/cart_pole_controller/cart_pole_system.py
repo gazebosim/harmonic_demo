@@ -17,6 +17,7 @@ from gz.transport13 import Node
 from gz.msgs10.double_pb2 import Double
 from gz.msgs10.vector2d_pb2 import Vector2d
 from gz.msgs10.empty_pb2 import Empty
+import sdformat14 as sdformat
 import numpy as np
 from threading import Lock
 import importlib
@@ -27,7 +28,8 @@ class CartPoleSystem(object):
 
     def configure(self, entity, sdf, ecm, event_mgr):
         self.model = Model(entity)
-        self.link = Link(self.model.link_by_name(ecm, "cart"))
+        self.cart_link = Link(self.model.link_by_name(ecm, "cart"))
+        self.point_mass_link = Link(self.model.link_by_name(ecm, "point_mass"))
         self.cart_joint = Joint(self.model.joint_by_name(ecm, "cart_joint"))
         self.pole_joint = Joint(self.model.joint_by_name(ecm, "pole_joint"))
 
@@ -42,7 +44,7 @@ class CartPoleSystem(object):
         self.pole_joint.enable_velocity_check(ecm)
 
         self.pole_joint.reset_position(ecm, [initial_angle])
-        self.init_controller()
+        self.init_controller(sdf, ecm)
 
         self.node = Node()
         reset_angle_topic = sdf.get_string("reset_angle_topic", "reset_angle")[0]
@@ -64,13 +66,15 @@ class CartPoleSystem(object):
         self.position_pub = self.node.advertise(position_topic, Vector2d)
         self.velocity_pub = self.node.advertise(velocity_topic, Vector2d)
 
-    def init_controller(self):
+    def init_controller(self, sdf, ecm):
         # TODO Get these from the model
-        mass_cart = 0.2
-        mass_point_mass = 0.03
-        pole_length = 0.8
-        self.controller = lqr_controller.LqrController(mass_cart,
-                mass_point_mass, pole_length)
+        # TODO (azeey) Add API in sim::Link to get the mass of the link
+        cart_mass = 0.25
+        point_mass = 0.03
+        pole_length = 0.4
+
+        self.controller = lqr_controller.LqrController(cart_mass,
+                point_mass, pole_length)
 
     def pre_update(self, info, ecm):
         if info.paused:
