@@ -12,23 +12,18 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-from gz.math7 import Vector3d
 from gz.sim8 import Model, Link, Joint
-import random
 import numpy as np
-from scipy import linalg
+from . import lqr_controller
 
 # Ideas:
-# Topic to reset initial angle
-# Put controller code in another module and provide a gz-transport service to 
+# - Topic to reset initial angle
+# - Put controller code in another module and provide a gz-transport service to
 # reload it, so we can easily tune gains.
-# Add IMU and use that as a way to get the joint angle?
+# - Publish state and plot it
+# -
 
-# Controller adapted from https://towardsdatascience.com/comparing-optimal-control-and-reinforcement-learning-using-the-cart-pole-swing-up-openai-gym-772636bc48f4
-class TestSystem(object):
-
-    def __init__(self):
-        self.id = random.randint(1, 100)
+class CartPoleSystem(object):
 
     def configure(self, entity, sdf, ecm, event_mgr):
         self.model = Model(entity)
@@ -53,29 +48,9 @@ class TestSystem(object):
         mass_cart = 0.2
         mass_point_mass = 0.03
         pole_length = 0.8
+        self.controller = lqr_controller.LqrController(mass_cart,
+                mass_point_mass, pole_length)
 
-        a = 9.81/(pole_length * 4.0/3 - mass_point_mass/(mass_point_mass +
-            mass_cart))
-
-        A = np.array([[0, 1, 0, 0],
-                      [0, 0, a, 0],
-                      [0, 0, 0, 1],
-                      [0, 0, a, 0]])
-
-        b = -1/(pole_length*(4.0/3 - mass_point_mass/(mass_point_mass + mass_cart)))
-        B = np.array([[0], [1 / (mass_point_mass + mass_cart)], [0], [b]])
-
-        R = np.eye(1)
-        Q = np.eye(4)
-        Q[0, 0] = 10
-        Q[1, 1] = 10
-
-        # solve ricatti equation
-        P = linalg.solve_continuous_are(A, B, Q, R)
-
-        # calculate optimal controller gain
-        self.K = np.dot(np.linalg.inv(R),
-                        np.dot(B.T, P))
 
     def pre_update(self, info, ecm):
         if info.paused:
@@ -89,18 +64,13 @@ class TestSystem(object):
             self.cart_joint.velocity(ecm)[0],
             self.pole_joint.position(ecm)[0],
             self.pole_joint.velocity(ecm)[0]
-            ])
+        ])
 
-        u = -np.dot(self.K, x)
-        u_clipped = np.clip(u, -10000, 10000)
+        u = self.controller.compute(x)
 
-        # print(f"x={x} u={u_clipped}, ")
-        self.cart_joint.set_force(ecm, [u_clipped])
-
-        # if info.iterations % 3000 == 0:
-        #     self.cart_joint.set_force(ecm, [self.force * (random.random() - 0.5)])
+        self.cart_joint.set_force(ecm, [u])
 
 
 def get_system():
-    return TestSystem()
+    return CartPoleSystem()
 
