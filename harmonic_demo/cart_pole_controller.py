@@ -18,6 +18,11 @@ import random
 import numpy as np
 from scipy import linalg
 
+# Ideas:
+# Topic to reset initial angle
+# Put controller code in another module and provide a gz-transport service to 
+# reload it, so we can easily tune gains.
+# Add IMU and use that as a way to get the joint angle?
 
 # Controller adapted from https://towardsdatascience.com/comparing-optimal-control-and-reinforcement-learning-using-the-cart-pole-swing-up-openai-gym-772636bc48f4
 class TestSystem(object):
@@ -31,23 +36,25 @@ class TestSystem(object):
         self.cart_joint = Joint(self.model.joint_by_name(ecm, "cart_joint"))
         self.pole_joint = Joint(self.model.joint_by_name(ecm, "pole_joint"))
 
+        initial_angle = sdf.get_double("initial_angle", 0)[0]
+
         assert self.cart_joint.valid(ecm)
         assert self.pole_joint.valid(ecm)
-
-        self.force = sdf.get_double("force")
 
         self.cart_joint.enable_position_check(ecm)
         self.pole_joint.enable_position_check(ecm)
         self.cart_joint.enable_velocity_check(ecm)
         self.pole_joint.enable_velocity_check(ecm)
 
+        self.pole_joint.reset_position(ecm, [initial_angle])
+
 
         # TODO Get these from the model
         mass_cart = 0.2
-        mass_pole = 0.05
+        mass_point_mass = 0.03
         pole_length = 0.8
 
-        a = 9.81/(pole_length * 4.0/3 - mass_pole/(mass_pole +
+        a = 9.81/(pole_length * 4.0/3 - mass_point_mass/(mass_point_mass +
             mass_cart))
 
         A = np.array([[0, 1, 0, 0],
@@ -55,11 +62,13 @@ class TestSystem(object):
                       [0, 0, 0, 1],
                       [0, 0, a, 0]])
 
-        b = -1/(pole_length*(4.0/3 - mass_pole/(mass_pole+ mass_cart)))
-        B = np.array([[0], [1 / (mass_pole+ mass_cart)], [0], [b]])
+        b = -1/(pole_length*(4.0/3 - mass_point_mass/(mass_point_mass + mass_cart)))
+        B = np.array([[0], [1 / (mass_point_mass + mass_cart)], [0], [b]])
 
         R = np.eye(1)
-        Q = 5*np.eye(4)
+        Q = np.eye(4)
+        Q[0, 0] = 10
+        Q[1, 1] = 10
 
         # solve ricatti equation
         P = linalg.solve_continuous_are(A, B, Q, R)

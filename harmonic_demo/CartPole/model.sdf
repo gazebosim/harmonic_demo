@@ -7,8 +7,21 @@
     </joint>
 
     <link name="base">
+      <visual name="shaft">
+        <pose degrees="true">0 0 0   0 90 0</pose>
+        <geometry>
+          <cylinder>
+            <length>6.3</length>
+            <radius>0.02</radius>
+          </cylinder>
+        </geometry>
+        <material>
+          <diffuse>0.0 1.0 1.0 0.4</diffuse>
+          <specular>1.0 1.0 1.0 0.4</specular>
+        </material>
+      </visual>
       <visual name="lower_limit">
-        <pose>-1.15 0 0   0 0 0</pose>
+        <pose>-3.15 0 0   0 0 0</pose>
         <geometry>
           <box>
             <size>0.1 0.1 0.1</size>
@@ -20,7 +33,7 @@
         </material>
       </visual>
       <visual name="upper_limit">
-        <pose>1.15 0 0   0 0 0</pose>
+        <pose>3.15 0 0   0 0 0</pose>
         <geometry>
           <box>
             <size>0.1 0.1 0.1</size>
@@ -38,8 +51,8 @@
       <axis>
         <xyz>1 0 0</xyz>
         <limit>
-          <lower>-1</lower>
-          <upper>1</upper>
+          <lower>-3</lower>
+          <upper>3</upper>
         </limit>
         <dynamics>
           <damping>0.001</damping>
@@ -99,7 +112,7 @@
         </material>
       </visual>
       <collision name="collision">
-        <density>100</density>
+        <density>1</density>
         <geometry>
           <cylinder>
             <length>0.4</length>
@@ -109,9 +122,38 @@
       </collision>
     </link>
 
+    <joint name="pole_point_mass_joint" type="fixed">
+      <parent>pole</parent>
+      <child>point_mass</child>
+    </joint>
+
+    <link name="point_mass">
+      <pose relative_to="pole">0 0.0 0.4   0 0 0</pose>
+      <inertial auto="true"/>
+      <visual name="visual">
+        <geometry>
+          <sphere>
+            <radius>0.04</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <diffuse>1.0 1.0 1.0</diffuse>
+          <specular>1.0 1.0 1.0</specular>
+        </material>
+      </visual>
+      <collision name="collision">
+        <density>100</density>
+        <geometry>
+          <sphere>
+            <radius>0.04</radius>
+          </sphere>
+        </geometry>
+      </collision>
+    </link>
+
     <plugin filename="gz-sim-python-system-loader-system" name="gz::sim::systems::PythonSystemLoader">
       <module_name>cart_pole_controller</module_name>
-      <force>50</force>
+      <initial_angle>0.5</initial_angle>
     </plugin>
   </model>
 </sdf>
