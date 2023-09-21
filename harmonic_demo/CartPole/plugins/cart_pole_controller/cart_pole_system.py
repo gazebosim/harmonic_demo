@@ -15,13 +15,13 @@
 from gz.sim8 import Model, Link, Joint
 from gz.transport13 import Node
 from gz.msgs10.double_pb2 import Double
+from gz.msgs10.empty_pb2 import Empty
 import numpy as np
 from threading import Lock
+import importlib
 from . import lqr_controller
 
 # Ideas:
-# - Put controller code in another module and provide a gz-transport service to
-# reload it, so we can easily tune gains.
 # - Publish state and plot it
 
 class CartPoleSystem(object):
@@ -43,14 +43,7 @@ class CartPoleSystem(object):
         self.pole_joint.enable_velocity_check(ecm)
 
         self.pole_joint.reset_position(ecm, [initial_angle])
-
-
-        # TODO Get these from the model
-        mass_cart = 0.2
-        mass_point_mass = 0.03
-        pole_length = 0.8
-        self.controller = lqr_controller.LqrController(mass_cart,
-                mass_point_mass, pole_length)
+        self.init_controller()
 
         self.node = Node()
         reset_angle_topic = sdf.get_string("reset_angle_topic", "reset_angle")[0]
@@ -60,6 +53,18 @@ class CartPoleSystem(object):
         self.new_reset_angle = None
         self.reset_angle_lock = Lock()
 
+        reload_controller_topic = sdf.get_string("reload_controller_topic", "reload_controller")[0]
+        print("Subscribing to", reload_controller_topic)
+        self.node.subscribe(Empty, reload_controller_topic, self.reload_controller_cb)
+        self.controller_lock = Lock()
+
+    def init_controller(self):
+        # TODO Get these from the model
+        mass_cart = 0.2
+        mass_point_mass = 0.03
+        pole_length = 0.8
+        self.controller = lqr_controller.LqrController(mass_cart,
+                mass_point_mass, pole_length)
 
     def pre_update(self, info, ecm):
         if info.paused:
@@ -81,13 +86,22 @@ class CartPoleSystem(object):
         ])
         print(x)
 
-        u = self.controller.compute(x)
+        with self.controller_lock:
+            u = self.controller.compute(x)
 
         self.cart_joint.set_force(ecm, [u])
 
     def reset_angle_cb(self, msg):
         with self.reset_angle_lock:
             self.new_reset_angle = msg.data
+            print("Resetting angle to", self.new_reset_angle)
+
+    def reload_controller_cb(self, msg):
+        with self.controller_lock:
+            print("Reloading controller")
+            importlib.reload(lqr_controller)
+            self.init_controller()
+
 
 
 def get_system():

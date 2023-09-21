@@ -45,7 +45,4 @@ class LqrController(object):
 
     def compute(self, x):
         u = -np.dot(self.K, x)
-        u_clipped = np.clip(u, -10000, 10000)
-
-        # print(f"x={x} u={u_clipped}, ")
-        return u_clipped
+        return u

@@ -54,9 +54,6 @@
           <lower>-3</lower>
           <upper>3</upper>
         </limit>
-        <dynamics>
-          <damping>0.001</damping>
-        </dynamics>
       </axis>
     </joint>
 
@@ -89,10 +86,6 @@
       <child>pole</child>
       <axis>
         <xyz>0 1 0</xyz>
-
-        <dynamics>
-          <damping>0.001</damping>
-        </dynamics>
       </axis>
     </joint>
 
@@ -155,6 +148,7 @@
       <module_name>cart_pole_controller</module_name>
       <initial_angle>0.5</initial_angle>
       <reset_angle_topic>cart_pole/reset_angle</reset_angle_topic>
+      <reload_controller_topic>cart_pole/reload_controller</reload_controller_topic>
     </plugin>
   </model>
 </sdf>
