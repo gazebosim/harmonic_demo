@@ -3,342 +3,342 @@
   <model name="house">
     <static>true</static>
     <link name="base_link">
-      <visual name="Concrete_visual">
-        <geometry>
-          <mesh>
-            <uri>model://Lake House/meshes/house.dae</uri>
-            <submesh>
-              <name>Concrete</name>
-              <center>false</center>
-            </submesh>
-          </mesh>
-        </geometry>
-        <material>
-          <diffuse>1.0 1.0 1.0</diffuse>
-          <specular>1.0 1.0 1.0</specular>
-          <pbr>
-            <metal>
-              <albedo_map>model://Lake House/materials/textures/ConcreteTiles_Albedo.png</albedo_map>
-              <normal_map>model://Lake House/materials/textures/ConcreteTiles_Normal.png</normal_map>
-              <roughness_map>model://Lake House/materials/textures/ConcreteTiles_Roughness.png</roughness_map>
-            </metal>
-          </pbr>
-          <!-- fallback to script if no PBR support-->
-          <script>
-            <uri>model://Lake House/materials/scripts/</uri>
-            <uri>model://Lake House/materials/textures/</uri>
-            <name>Fallback/ConcreteTiles_Diffuse</name>
-          </script>
-        </material>
-      </visual>
-      <visual name="Siding_visual">
-        <geometry>
-          <mesh>
-            <uri>model://Lake House/meshes/house.dae</uri>
-            <submesh>
-              <name>Siding</name>
-              <center>false</center>
-            </submesh>
-          </mesh>
-        </geometry>
-        <material>
-          <diffuse>1.0 1.0 1.0</diffuse>
-          <specular>1.0 1.0 1.0</specular>
-          <pbr>
-            <metal>
-              <albedo_map>model://Lake House/materials/textures/Siding_Albedo.png</albedo_map>
-              <normal_map>model://Lake House/materials/textures/Siding_Normal.png</normal_map>
-              <roughness_map>model://Lake House/materials/textures/Siding_Roughness.png</roughness_map>
-            </metal>
-          </pbr>
-          <!-- fallback to script if no PBR support-->
-          <script>
-            <uri>model://Lake House/materials/scripts/</uri>
-            <uri>model://Lake House/materials/textures/</uri>
-            <name>Fallback/Siding_Diffuse</name>
-          </script>
-        </material>
-      </visual>
-      <visual name="WhiteWood_visual">
-        <geometry>
-          <mesh>
-            <uri>model://Lake House/meshes/house.dae</uri>
-            <submesh>
-              <name>WhiteWood</name>
-              <center>false</center>
-            </submesh>
-          </mesh>
-        </geometry>
-        <material>
-          <diffuse>1.0 1.0 1.0</diffuse>
-          <specular>1.0 1.0 1.0</specular>
-          <pbr>
-            <metal>
-              <albedo_map>model://Lake House/materials/textures/WhiteWood_Albedo.png</albedo_map>
-              <normal_map>model://Lake House/materials/textures/WhiteWood_Normal.png</normal_map>
-              <roughness_map>model://Lake House/materials/textures/WhiteWood_Roughness.png</roughness_map>
-            </metal>
-          </pbr>
-          <!-- fallback to script if no PBR support-->
-          <script>
-            <uri>model://Lake House/materials/scripts/</uri>
-            <uri>model://Lake House/materials/textures/</uri>
-            <name>Fallback/WhiteWood_Diffuse</name>
-          </script>
-        </material>
-      </visual>
-      <visual name="Roof_visual">
-        <geometry>
-          <mesh>
-            <uri>model://Lake House/meshes/house.dae</uri>
-            <submesh>
-              <name>Roof</name>
-              <center>false</center>
-            </submesh>
-          </mesh>
-        </geometry>
-        <material>
-          <diffuse>1.0 1.0 1.0</diffuse>
-          <specular>1.0 1.0 1.0</specular>
-          <pbr>
-            <metal>
-              <albedo_map>model://Lake House/materials/textures/Roof_Albedo.png</albedo_map>
-              <normal_map>model://Lake House/materials/textures/Roof_Normal.png</normal_map>
-              <roughness_map>model://Lake House/materials/textures/Roof_Roughness.png</roughness_map>
-            </metal>
-          </pbr>
-          <!-- fallback to script if no PBR support-->
-          <script>
-            <uri>model://Lake House/materials/scripts/</uri>
-            <uri>model://Lake House/materials/textures/</uri>
-            <name>Fallback/Roof_Diffuse</name>
-          </script>
-        </material>
-      </visual>
-      <visual name="Deck_visual">
-        <geometry>
-          <mesh>
-            <uri>model://Lake House/meshes/house.dae</uri>
-            <submesh>
-              <name>Deck</name>
-              <center>false</center>
-            </submesh>
-          </mesh>
-        </geometry>
-        <material>
-          <diffuse>1.0 1.0 1.0</diffuse>
-          <specular>1.0 1.0 1.0</specular>
-          <pbr>
-            <metal>
-              <albedo_map>model://Lake House/materials/textures/Deck_Albedo.png</albedo_map>
-              <normal_map>model://Lake House/materials/textures/Deck_Normal.png</normal_map>
-              <roughness_map>model://Lake House/materials/textures/Deck_Roughness.png</roughness_map>
-            </metal>
-          </pbr>
-          <!-- fallback to script if no PBR support-->
-          <script>
-            <uri>model://Lake House/materials/scripts/</uri>
-            <uri>model://Lake House/materials/textures/</uri>
-            <name>Fallback/Deck_Diffuse</name>
-          </script>
-        </material>
-      </visual>
-      <visual name="WallBeige_visual">
-        <geometry>
-          <mesh>
-            <uri>model://Lake House/meshes/house.dae</uri>
-            <submesh>
-              <name>WallBeige</name>
-              <center>false</center>
-            </submesh>
-          </mesh>
-        </geometry>
-        <material>
-          <diffuse>1.0 1.0 1.0</diffuse>
-          <specular>1.0 1.0 1.0</specular>
-          <pbr>
-            <metal>
-              <albedo_map>model://Lake House/materials/textures/WallBeige_Albedo.png</albedo_map>
-              <normal_map>model://Lake House/materials/textures/Wall_Normal.png</normal_map>
-              <roughness_map>model://Lake House/materials/textures/Wall_Roughness.png</roughness_map>
-            </metal>
-          </pbr>
-          <!-- fallback to script if no PBR support-->
-          <script>
-            <uri>model://Lake House/materials/scripts/</uri>
-            <uri>model://Lake House/materials/textures/</uri>
-            <name>Fallback/WallBeige_Diffuse</name>
-          </script>
-        </material>
-      </visual>
-      <visual name="Brick_visual">
-        <geometry>
-          <mesh>
-            <uri>model://Lake House/meshes/house.dae</uri>
-            <submesh>
-              <name>Brick</name>
-              <center>false</center>
-            </submesh>
-          </mesh>
-        </geometry>
-        <material>
-          <diffuse>1.0 1.0 1.0</diffuse>
-          <specular>1.0 1.0 1.0</specular>
-          <pbr>
-            <metal>
-              <albedo_map>model://Lake House/materials/textures/Brick_Albedo.png</albedo_map>
-              <normal_map>model://Lake House/materials/textures/Brick_Normal.png</normal_map>
-              <roughness_map>model://Lake House/materials/textures/Brick_Roughness.png</roughness_map>
-            </metal>
-          </pbr>
-          <!-- fallback to script if no PBR support-->
-          <script>
-            <uri>model://Lake House/materials/scripts/</uri>
-            <uri>model://Lake House/materials/textures/</uri>
-            <name>Fallback/Brick_Diffuse</name>
-          </script>
-        </material>
-      </visual>
-      <visual name="Asphalt_visual">
-        <geometry>
-          <mesh>
-            <uri>model://Lake House/meshes/house.dae</uri>
-            <submesh>
-              <name>Asphalt</name>
-              <center>false</center>
-            </submesh>
-          </mesh>
-        </geometry>
-        <material>
-          <diffuse>1.0 1.0 1.0</diffuse>
-          <specular>1.0 1.0 1.0</specular>
-          <pbr>
-            <metal>
-              <albedo_map>model://Lake House/materials/textures/Asphalt_Albedo.png</albedo_map>
-              <normal_map>model://Lake House/materials/textures/Asphalt_Normal.png</normal_map>
-              <roughness_map>model://Lake House/materials/textures/Asphalt_Roughness.png</roughness_map>
-            </metal>
-          </pbr>
-          <!-- fallback to script if no PBR support-->
-          <script>
-            <uri>model://Lake House/materials/scripts/</uri>
-            <uri>model://Lake House/materials/textures/</uri>
-            <name>Fallback/Asphalt_Diffuse</name>
-          </script>
-        </material>
-      </visual>
-      <visual name="Baseboard_visual">
-        <geometry>
-          <mesh>
-            <uri>model://Lake House/meshes/house.dae</uri>
-            <submesh>
-              <name>Baseboard</name>
-              <center>false</center>
-            </submesh>
-          </mesh>
-        </geometry>
-        <material>
-          <diffuse>1.0 1.0 1.0</diffuse>
-          <specular>1.0 1.0 1.0</specular>
-          <pbr>
-            <metal>
-              <albedo_map>model://Lake House/materials/textures/Baseboard_Albedo.png</albedo_map>
-              <normal_map>model://Lake House/materials/textures/Baseboard_Normal.png</normal_map>
-              <roughness_map>model://Lake House/materials/textures/Baseboard_Roughness.png</roughness_map>
-            </metal>
-          </pbr>
-          <!-- fallback to script if no PBR support-->
-          <script>
-            <uri>model://Lake House/materials/scripts/</uri>
-            <uri>model://Lake House/materials/textures/</uri>
-            <name>Fallback/Baseboard_Diffuse</name>
-          </script>
-        </material>
-      </visual>
-      <visual name="Cobblestone_visual">
-        <geometry>
-          <mesh>
-            <uri>model://Lake House/meshes/house.dae</uri>
-            <submesh>
-              <name>Cobblestone</name>
-              <center>false</center>
-            </submesh>
-          </mesh>
-        </geometry>
-        <material>
-          <diffuse>1.0 1.0 1.0</diffuse>
-          <specular>1.0 1.0 1.0</specular>
-          <pbr>
-            <metal>
-              <albedo_map>model://Lake House/materials/textures/Cobblestone_Albedo.png</albedo_map>
-              <normal_map>model://Lake House/materials/textures/Cobblestone_Normal.png</normal_map>
-              <roughness_map>model://Lake House/materials/textures/Cobblestone_Roughness.png</roughness_map>
-            </metal>
-          </pbr>
-          <!-- fallback to script if no PBR support-->
-          <script>
-            <uri>model://Lake House/materials/scripts/</uri>
-            <uri>model://Lake House/materials/textures/</uri>
-            <name>Fallback/Cobblestone_Diffuse</name>
-          </script>
-        </material>
-      </visual>
-      <visual name="Cabinets_visual">
-        <geometry>
-          <mesh>
-            <uri>model://Lake House/meshes/house.dae</uri>
-            <submesh>
-              <name>Cabinets</name>
-              <center>false</center>
-            </submesh>
-          </mesh>
-        </geometry>
-        <material>
-          <diffuse>1.0 1.0 1.0</diffuse>
-          <specular>1.0 1.0 1.0</specular>
-          <pbr>
-            <metal>
-              <albedo_map>model://Lake House/materials/textures/Cabinets_Albedo.jpeg</albedo_map>
-              <normal_map>model://Lake House/materials/textures/Cabinets_Normal.jpeg</normal_map>
-              <roughness_map>model://Lake House/materials/textures/Cabinets_Roughness.jpeg</roughness_map>
-            </metal>
-          </pbr>
-          <!-- fallback to script if no PBR support-->
-          <script>
-            <uri>model://Lake House/materials/scripts/</uri>
-            <uri>model://Lake House/materials/textures/</uri>
-            <name>Fallback/Cabinets_Diffuse</name>
-          </script>
-        </material>
-      </visual>
-      <visual name="StainlessSteel_visual">
-        <geometry>
-          <mesh>
-            <uri>model://Lake House/meshes/house.dae</uri>
-            <submesh>
-              <name>StainlessSteel</name>
-              <center>false</center>
-            </submesh>
-          </mesh>
-        </geometry>
-        <material>
-          <diffuse>1.0 1.0 1.0</diffuse>
-          <specular>1.0 1.0 1.0</specular>
-          <pbr>
-            <metal>
-              <albedo_map>model://Lake House/materials/textures/StainlessSteel_Albedo.png</albedo_map>
-              <metalness_map>model://Lake House/materials/textures/StainlessSteel_Metalness.png</metalness_map>
-              <roughness_map>model://Lake House/materials/textures/StainlessSteel_Roughness.png</roughness_map>
-            </metal>
-          </pbr>
-          <!-- fallback to script if no PBR support-->
-          <script>
-            <uri>model://Lake House/materials/scripts/</uri>
-            <uri>model://Lake House/materials/textures/</uri>
-            <name>Fallback/StainlessSteel_Diffuse</name>
-          </script>
-        </material>
-      </visual>
+      <!--<visual name="Concrete_visual">-->
+      <!--  <geometry>-->
+      <!--    <mesh>-->
+      <!--      <uri>model://Lake House/meshes/house.dae</uri>-->
+      <!--      <submesh>-->
+      <!--        <name>Concrete</name>-->
+      <!--        <center>false</center>-->
+      <!--      </submesh>-->
+      <!--    </mesh>-->
+      <!--  </geometry>-->
+      <!--  <material>-->
+      <!--    <diffuse>1.0 1.0 1.0</diffuse>-->
+      <!--    <specular>1.0 1.0 1.0</specular>-->
+      <!--    <pbr>-->
+      <!--      <metal>-->
+      <!--        <albedo_map>model://Lake House/materials/textures/ConcreteTiles_Albedo.png</albedo_map>-->
+      <!--        <normal_map>model://Lake House/materials/textures/ConcreteTiles_Normal.png</normal_map>-->
+      <!--        <roughness_map>model://Lake House/materials/textures/ConcreteTiles_Roughness.png</roughness_map>-->
+      <!--      </metal>-->
+      <!--    </pbr>-->
+      <!--    [> fallback to script if no PBR support<]-->
+      <!--    <script>-->
+      <!--      <uri>model://Lake House/materials/scripts/</uri>-->
+      <!--      <uri>model://Lake House/materials/textures/</uri>-->
+      <!--      <name>Fallback/ConcreteTiles_Diffuse</name>-->
+      <!--    </script>-->
+      <!--  </material>-->
+      <!--</visual>-->
+      <!--<visual name="Siding_visual">-->
+      <!--  <geometry>-->
+      <!--    <mesh>-->
+      <!--      <uri>model://Lake House/meshes/house.dae</uri>-->
+      <!--      <submesh>-->
+      <!--        <name>Siding</name>-->
+      <!--        <center>false</center>-->
+      <!--      </submesh>-->
+      <!--    </mesh>-->
+      <!--  </geometry>-->
+      <!--  <material>-->
+      <!--    <diffuse>1.0 1.0 1.0</diffuse>-->
+      <!--    <specular>1.0 1.0 1.0</specular>-->
+      <!--    <pbr>-->
+      <!--      <metal>-->
+      <!--        <albedo_map>model://Lake House/materials/textures/Siding_Albedo.png</albedo_map>-->
+      <!--        <normal_map>model://Lake House/materials/textures/Siding_Normal.png</normal_map>-->
+      <!--        <roughness_map>model://Lake House/materials/textures/Siding_Roughness.png</roughness_map>-->
+      <!--      </metal>-->
+      <!--    </pbr>-->
+      <!--    [> fallback to script if no PBR support<]-->
+      <!--    <script>-->
+      <!--      <uri>model://Lake House/materials/scripts/</uri>-->
+      <!--      <uri>model://Lake House/materials/textures/</uri>-->
+      <!--      <name>Fallback/Siding_Diffuse</name>-->
+      <!--    </script>-->
+      <!--  </material>-->
+      <!--</visual>-->
+      <!--<visual name="WhiteWood_visual">-->
+      <!--  <geometry>-->
+      <!--    <mesh>-->
+      <!--      <uri>model://Lake House/meshes/house.dae</uri>-->
+      <!--      <submesh>-->
+      <!--        <name>WhiteWood</name>-->
+      <!--        <center>false</center>-->
+      <!--      </submesh>-->
+      <!--    </mesh>-->
+      <!--  </geometry>-->
+      <!--  <material>-->
+      <!--    <diffuse>1.0 1.0 1.0</diffuse>-->
+      <!--    <specular>1.0 1.0 1.0</specular>-->
+      <!--    <pbr>-->
+      <!--      <metal>-->
+      <!--        <albedo_map>model://Lake House/materials/textures/WhiteWood_Albedo.png</albedo_map>-->
+      <!--        <normal_map>model://Lake House/materials/textures/WhiteWood_Normal.png</normal_map>-->
+      <!--        <roughness_map>model://Lake House/materials/textures/WhiteWood_Roughness.png</roughness_map>-->
+      <!--      </metal>-->
+      <!--    </pbr>-->
+      <!--    [> fallback to script if no PBR support<]-->
+      <!--    <script>-->
+      <!--      <uri>model://Lake House/materials/scripts/</uri>-->
+      <!--      <uri>model://Lake House/materials/textures/</uri>-->
+      <!--      <name>Fallback/WhiteWood_Diffuse</name>-->
+      <!--    </script>-->
+      <!--  </material>-->
+      <!--</visual>-->
+      <!--<visual name="Roof_visual">-->
+      <!--  <geometry>-->
+      <!--    <mesh>-->
+      <!--      <uri>model://Lake House/meshes/house.dae</uri>-->
+      <!--      <submesh>-->
+      <!--        <name>Roof</name>-->
+      <!--        <center>false</center>-->
+      <!--      </submesh>-->
+      <!--    </mesh>-->
+      <!--  </geometry>-->
+      <!--  <material>-->
+      <!--    <diffuse>1.0 1.0 1.0</diffuse>-->
+      <!--    <specular>1.0 1.0 1.0</specular>-->
+      <!--    <pbr>-->
+      <!--      <metal>-->
+      <!--        <albedo_map>model://Lake House/materials/textures/Roof_Albedo.png</albedo_map>-->
+      <!--        <normal_map>model://Lake House/materials/textures/Roof_Normal.png</normal_map>-->
+      <!--        <roughness_map>model://Lake House/materials/textures/Roof_Roughness.png</roughness_map>-->
+      <!--      </metal>-->
+      <!--    </pbr>-->
+      <!--    [> fallback to script if no PBR support<]-->
+      <!--    <script>-->
+      <!--      <uri>model://Lake House/materials/scripts/</uri>-->
+      <!--      <uri>model://Lake House/materials/textures/</uri>-->
+      <!--      <name>Fallback/Roof_Diffuse</name>-->
+      <!--    </script>-->
+      <!--  </material>-->
+      <!--</visual>-->
+      <!--<visual name="Deck_visual">-->
+      <!--  <geometry>-->
+      <!--    <mesh>-->
+      <!--      <uri>model://Lake House/meshes/house.dae</uri>-->
+      <!--      <submesh>-->
+      <!--        <name>Deck</name>-->
+      <!--        <center>false</center>-->
+      <!--      </submesh>-->
+      <!--    </mesh>-->
+      <!--  </geometry>-->
+      <!--  <material>-->
+      <!--    <diffuse>1.0 1.0 1.0</diffuse>-->
+      <!--    <specular>1.0 1.0 1.0</specular>-->
+      <!--    <pbr>-->
+      <!--      <metal>-->
+      <!--        <albedo_map>model://Lake House/materials/textures/Deck_Albedo.png</albedo_map>-->
+      <!--        <normal_map>model://Lake House/materials/textures/Deck_Normal.png</normal_map>-->
+      <!--        <roughness_map>model://Lake House/materials/textures/Deck_Roughness.png</roughness_map>-->
+      <!--      </metal>-->
+      <!--    </pbr>-->
+      <!--    [> fallback to script if no PBR support<]-->
+      <!--    <script>-->
+      <!--      <uri>model://Lake House/materials/scripts/</uri>-->
+      <!--      <uri>model://Lake House/materials/textures/</uri>-->
+      <!--      <name>Fallback/Deck_Diffuse</name>-->
+      <!--    </script>-->
+      <!--  </material>-->
+      <!--</visual>-->
+      <!--<visual name="WallBeige_visual">-->
+      <!--  <geometry>-->
+      <!--    <mesh>-->
+      <!--      <uri>model://Lake House/meshes/house.dae</uri>-->
+      <!--      <submesh>-->
+      <!--        <name>WallBeige</name>-->
+      <!--        <center>false</center>-->
+      <!--      </submesh>-->
+      <!--    </mesh>-->
+      <!--  </geometry>-->
+      <!--  <material>-->
+      <!--    <diffuse>1.0 1.0 1.0</diffuse>-->
+      <!--    <specular>1.0 1.0 1.0</specular>-->
+      <!--    <pbr>-->
+      <!--      <metal>-->
+      <!--        <albedo_map>model://Lake House/materials/textures/WallBeige_Albedo.png</albedo_map>-->
+      <!--        <normal_map>model://Lake House/materials/textures/Wall_Normal.png</normal_map>-->
+      <!--        <roughness_map>model://Lake House/materials/textures/Wall_Roughness.png</roughness_map>-->
+      <!--      </metal>-->
+      <!--    </pbr>-->
+      <!--    [> fallback to script if no PBR support<]-->
+      <!--    <script>-->
+      <!--      <uri>model://Lake House/materials/scripts/</uri>-->
+      <!--      <uri>model://Lake House/materials/textures/</uri>-->
+      <!--      <name>Fallback/WallBeige_Diffuse</name>-->
+      <!--    </script>-->
+      <!--  </material>-->
+      <!--</visual>-->
+      <!--<visual name="Brick_visual">-->
+      <!--  <geometry>-->
+      <!--    <mesh>-->
+      <!--      <uri>model://Lake House/meshes/house.dae</uri>-->
+      <!--      <submesh>-->
+      <!--        <name>Brick</name>-->
+      <!--        <center>false</center>-->
+      <!--      </submesh>-->
+      <!--    </mesh>-->
+      <!--  </geometry>-->
+      <!--  <material>-->
+      <!--    <diffuse>1.0 1.0 1.0</diffuse>-->
+      <!--    <specular>1.0 1.0 1.0</specular>-->
+      <!--    <pbr>-->
+      <!--      <metal>-->
+      <!--        <albedo_map>model://Lake House/materials/textures/Brick_Albedo.png</albedo_map>-->
+      <!--        <normal_map>model://Lake House/materials/textures/Brick_Normal.png</normal_map>-->
+      <!--        <roughness_map>model://Lake House/materials/textures/Brick_Roughness.png</roughness_map>-->
+      <!--      </metal>-->
+      <!--    </pbr>-->
+      <!--    [> fallback to script if no PBR support<]-->
+      <!--    <script>-->
+      <!--      <uri>model://Lake House/materials/scripts/</uri>-->
+      <!--      <uri>model://Lake House/materials/textures/</uri>-->
+      <!--      <name>Fallback/Brick_Diffuse</name>-->
+      <!--    </script>-->
+      <!--  </material>-->
+      <!--</visual>-->
+      <!--<visual name="Asphalt_visual">-->
+      <!--  <geometry>-->
+      <!--    <mesh>-->
+      <!--      <uri>model://Lake House/meshes/house.dae</uri>-->
+      <!--      <submesh>-->
+      <!--        <name>Asphalt</name>-->
+      <!--        <center>false</center>-->
+      <!--      </submesh>-->
+      <!--    </mesh>-->
+      <!--  </geometry>-->
+      <!--  <material>-->
+      <!--    <diffuse>1.0 1.0 1.0</diffuse>-->
+      <!--    <specular>1.0 1.0 1.0</specular>-->
+      <!--    <pbr>-->
+      <!--      <metal>-->
+      <!--        <albedo_map>model://Lake House/materials/textures/Asphalt_Albedo.png</albedo_map>-->
+      <!--        <normal_map>model://Lake House/materials/textures/Asphalt_Normal.png</normal_map>-->
+      <!--        <roughness_map>model://Lake House/materials/textures/Asphalt_Roughness.png</roughness_map>-->
+      <!--      </metal>-->
+      <!--    </pbr>-->
+      <!--    [> fallback to script if no PBR support<]-->
+      <!--    <script>-->
+      <!--      <uri>model://Lake House/materials/scripts/</uri>-->
+      <!--      <uri>model://Lake House/materials/textures/</uri>-->
+      <!--      <name>Fallback/Asphalt_Diffuse</name>-->
+      <!--    </script>-->
+      <!--  </material>-->
+      <!--</visual>-->
+      <!--<visual name="Baseboard_visual">-->
+      <!--  <geometry>-->
+      <!--    <mesh>-->
+      <!--      <uri>model://Lake House/meshes/house.dae</uri>-->
+      <!--      <submesh>-->
+      <!--        <name>Baseboard</name>-->
+      <!--        <center>false</center>-->
+      <!--      </submesh>-->
+      <!--    </mesh>-->
+      <!--  </geometry>-->
+      <!--  <material>-->
+      <!--    <diffuse>1.0 1.0 1.0</diffuse>-->
+      <!--    <specular>1.0 1.0 1.0</specular>-->
+      <!--    <pbr>-->
+      <!--      <metal>-->
+      <!--        <albedo_map>model://Lake House/materials/textures/Baseboard_Albedo.png</albedo_map>-->
+      <!--        <normal_map>model://Lake House/materials/textures/Baseboard_Normal.png</normal_map>-->
+      <!--        <roughness_map>model://Lake House/materials/textures/Baseboard_Roughness.png</roughness_map>-->
+      <!--      </metal>-->
+      <!--    </pbr>-->
+      <!--    [> fallback to script if no PBR support<]-->
+      <!--    <script>-->
+      <!--      <uri>model://Lake House/materials/scripts/</uri>-->
+      <!--      <uri>model://Lake House/materials/textures/</uri>-->
+      <!--      <name>Fallback/Baseboard_Diffuse</name>-->
+      <!--    </script>-->
+      <!--  </material>-->
+      <!--</visual>-->
+      <!--<visual name="Cobblestone_visual">-->
+      <!--  <geometry>-->
+      <!--    <mesh>-->
+      <!--      <uri>model://Lake House/meshes/house.dae</uri>-->
+      <!--      <submesh>-->
+      <!--        <name>Cobblestone</name>-->
+      <!--        <center>false</center>-->
+      <!--      </submesh>-->
+      <!--    </mesh>-->
+      <!--  </geometry>-->
+      <!--  <material>-->
+      <!--    <diffuse>1.0 1.0 1.0</diffuse>-->
+      <!--    <specular>1.0 1.0 1.0</specular>-->
+      <!--    <pbr>-->
+      <!--      <metal>-->
+      <!--        <albedo_map>model://Lake House/materials/textures/Cobblestone_Albedo.png</albedo_map>-->
+      <!--        <normal_map>model://Lake House/materials/textures/Cobblestone_Normal.png</normal_map>-->
+      <!--        <roughness_map>model://Lake House/materials/textures/Cobblestone_Roughness.png</roughness_map>-->
+      <!--      </metal>-->
+      <!--    </pbr>-->
+      <!--    [> fallback to script if no PBR support<]-->
+      <!--    <script>-->
+      <!--      <uri>model://Lake House/materials/scripts/</uri>-->
+      <!--      <uri>model://Lake House/materials/textures/</uri>-->
+      <!--      <name>Fallback/Cobblestone_Diffuse</name>-->
+      <!--    </script>-->
+      <!--  </material>-->
+      <!--</visual>-->
+      <!--<visual name="Cabinets_visual">-->
+      <!--  <geometry>-->
+      <!--    <mesh>-->
+      <!--      <uri>model://Lake House/meshes/house.dae</uri>-->
+      <!--      <submesh>-->
+      <!--        <name>Cabinets</name>-->
+      <!--        <center>false</center>-->
+      <!--      </submesh>-->
+      <!--    </mesh>-->
+      <!--  </geometry>-->
+      <!--  <material>-->
+      <!--    <diffuse>1.0 1.0 1.0</diffuse>-->
+      <!--    <specular>1.0 1.0 1.0</specular>-->
+      <!--    <pbr>-->
+      <!--      <metal>-->
+      <!--        <albedo_map>model://Lake House/materials/textures/Cabinets_Albedo.jpeg</albedo_map>-->
+      <!--        <normal_map>model://Lake House/materials/textures/Cabinets_Normal.jpeg</normal_map>-->
+      <!--        <roughness_map>model://Lake House/materials/textures/Cabinets_Roughness.jpeg</roughness_map>-->
+      <!--      </metal>-->
+      <!--    </pbr>-->
+      <!--    [> fallback to script if no PBR support<]-->
+      <!--    <script>-->
+      <!--      <uri>model://Lake House/materials/scripts/</uri>-->
+      <!--      <uri>model://Lake House/materials/textures/</uri>-->
+      <!--      <name>Fallback/Cabinets_Diffuse</name>-->
+      <!--    </script>-->
+      <!--  </material>-->
+      <!--</visual>-->
+      <!--<visual name="StainlessSteel_visual">-->
+      <!--  <geometry>-->
+      <!--    <mesh>-->
+      <!--      <uri>model://Lake House/meshes/house.dae</uri>-->
+      <!--      <submesh>-->
+      <!--        <name>StainlessSteel</name>-->
+      <!--        <center>false</center>-->
+      <!--      </submesh>-->
+      <!--    </mesh>-->
+      <!--  </geometry>-->
+      <!--  <material>-->
+      <!--    <diffuse>1.0 1.0 1.0</diffuse>-->
+      <!--    <specular>1.0 1.0 1.0</specular>-->
+      <!--    <pbr>-->
+      <!--      <metal>-->
+      <!--        <albedo_map>model://Lake House/materials/textures/StainlessSteel_Albedo.png</albedo_map>-->
+      <!--        <metalness_map>model://Lake House/materials/textures/StainlessSteel_Metalness.png</metalness_map>-->
+      <!--        <roughness_map>model://Lake House/materials/textures/StainlessSteel_Roughness.png</roughness_map>-->
+      <!--      </metal>-->
+      <!--    </pbr>-->
+      <!--    [> fallback to script if no PBR support<]-->
+      <!--    <script>-->
+      <!--      <uri>model://Lake House/materials/scripts/</uri>-->
+      <!--      <uri>model://Lake House/materials/textures/</uri>-->
+      <!--      <name>Fallback/StainlessSteel_Diffuse</name>-->
+      <!--    </script>-->
+      <!--  </material>-->
+      <!--</visual>-->
       <visual name="Fireplace_visual">
         <geometry>
           <mesh>
@@ -367,171 +367,171 @@
           </script>
         </material>
       </visual>
-      <visual name="Counter_visual">
-        <geometry>
-          <mesh>
-            <uri>model://Lake House/meshes/house.dae</uri>
-            <submesh>
-              <name>Counter</name>
-              <center>false</center>
-            </submesh>
-          </mesh>
-        </geometry>
-        <material>
-          <diffuse>1.0 1.0 1.0</diffuse>
-          <specular>1.0 1.0 1.0</specular>
-          <pbr>
-            <metal>
-              <albedo_map>model://Lake House/materials/textures/Counter_Albedo.png</albedo_map>
-              <normal_map>model://Lake House/materials/textures/Counter_Normal.png</normal_map>
-            </metal>
-          </pbr>
-          <!-- fallback to script if no PBR support-->
-          <script>
-            <uri>model://Lake House/materials/scripts/</uri>
-            <uri>model://Lake House/materials/textures/</uri>
-            <name>Fallback/Counter_Diffuse</name>
-          </script>
-        </material>
-      </visual>
-      <visual name="Hedge_visual">
-        <geometry>
-          <mesh>
-            <uri>model://Lake House/meshes/house.dae</uri>
-            <submesh>
-              <name>Hedge</name>
-              <center>false</center>
-            </submesh>
-          </mesh>
-        </geometry>
-        <material>
-          <diffuse>1.0 1.0 1.0</diffuse>
-          <specular>1.0 1.0 1.0</specular>
-          <pbr>
-            <metal>
-              <albedo_map>model://Lake House/materials/textures/Hedges_Albedo.png</albedo_map>
-              <normal_map>model://Lake House/materials/textures/Hedges_Normal.png</normal_map>
-              <roughness_map>model://Lake House/materials/textures/Hedges_Roughness.png</roughness_map>
-            </metal>
-          </pbr>
-          <!-- fallback to script if no PBR support-->
-          <script>
-            <uri>model://Lake House/materials/scripts/</uri>
-            <uri>model://Lake House/materials/textures/</uri>
-            <name>Fallback/Hedge_Diffuse</name>
-          </script>
-        </material>
-      </visual>
-      <visual name="Glass_visual">
-        <geometry>
-          <mesh>
-            <uri>model://Lake House/meshes/house.dae</uri>
-            <submesh>
-              <name>Glass</name>
-              <center>false</center>
-            </submesh>
-          </mesh>
-        </geometry>
-        <material>
-          <diffuse>1.0 1.0 1.0</diffuse>
-          <specular>1.0 1.0 1.0</specular>
-          <pbr>
-            <metal>
-              <albedo_map>model://Lake House/materials/textures/Glass.png</albedo_map>
-            </metal>
-          </pbr>
-          <!-- fallback to script if no PBR support-->
-          <script>
-            <uri>model://Lake House/materials/scripts/</uri>
-            <uri>model://Lake House/materials/textures/</uri>
-            <name>Fallback/Glass_Diffuse</name>
-          </script>
-        </material>
-      </visual>
-      <visual name="Floor_visual">
-        <geometry>
-          <mesh>
-            <uri>model://Lake House/meshes/house.dae</uri>
-            <submesh>
-              <name>Floor</name>
-              <center>false</center>
-            </submesh>
-          </mesh>
-        </geometry>
-        <material>
-          <diffuse>1.0 1.0 1.0</diffuse>
-          <specular>1.0 1.0 1.0</specular>
-          <pbr>
-            <metal>
-              <albedo_map>model://Lake House/materials/textures/Floor_Albedo.png</albedo_map>
-              <normal_map>model://Lake House/materials/textures/Floor_Normal.png</normal_map>
-              <roughness_map>model://Lake House/materials/textures/Floor_Roughness.png</roughness_map>
-            </metal>
-          </pbr>
-          <!-- fallback to script if no PBR support-->
-          <script>
-            <uri>model://Lake House/materials/scripts/</uri>
-            <uri>model://Lake House/materials/textures/</uri>
-            <name>Fallback/Floor_Diffuse</name>
-          </script>
-        </material>
-      </visual>
-      <visual name="WallWhite_visual">
-        <geometry>
-          <mesh>
-            <uri>model://Lake House/meshes/house.dae</uri>
-            <submesh>
-              <name>WallWhite</name>
-              <center>false</center>
-            </submesh>
-          </mesh>
-        </geometry>
-        <material>
-          <diffuse>1.0 1.0 1.0</diffuse>
-          <specular>1.0 1.0 1.0</specular>
-          <pbr>
-            <metal>
-              <albedo_map>model://Lake House/materials/textures/WallWhite_Albedo.png</albedo_map>
-              <normal_map>model://Lake House/materials/textures/Wall_Normal.png</normal_map>
-              <roughness_map>model://Lake House/materials/textures/Wall_Roughness.png</roughness_map>
-            </metal>
-          </pbr>
-          <!-- fallback to script if no PBR support-->
-          <script>
-            <uri>model://Lake House/materials/scripts/</uri>
-            <uri>model://Lake House/materials/textures/</uri>
-            <name>Fallback/WallWhite_Diffuse</name>
-          </script>
-        </material>
-      </visual>
-      <visual name="Stairs_visual">
-        <geometry>
-          <mesh>
-            <uri>model://Lake House/meshes/house.dae</uri>
-            <submesh>
-              <name>Stairs</name>
-              <center>false</center>
-            </submesh>
-          </mesh>
-        </geometry>
-        <material>
-          <diffuse>1.0 1.0 1.0</diffuse>
-          <specular>1.0 1.0 1.0</specular>
-          <pbr>
-            <metal>
-              <albedo_map>model://Lake House/materials/textures/Stairs_Albedo.png</albedo_map>
-              <normal_map>model://Lake House/materials/textures/Stairs_Normal.png</normal_map>
-              <roughness_map>model://Lake House/materials/textures/Stairs_Roughness.png</roughness_map>
-            </metal>
-          </pbr>
-          <!-- fallback to script if no PBR support-->
-          <script>
-            <uri>model://Lake House/materials/scripts/</uri>
-            <uri>model://Lake House/materials/textures/</uri>
-            <name>Fallback/Stairs_Diffuse</name>
-          </script>
-        </material>
-      </visual>
+      <!--<visual name="Counter_visual">-->
+      <!--  <geometry>-->
+      <!--    <mesh>-->
+      <!--      <uri>model://Lake House/meshes/house.dae</uri>-->
+      <!--      <submesh>-->
+      <!--        <name>Counter</name>-->
+      <!--        <center>false</center>-->
+      <!--      </submesh>-->
+      <!--    </mesh>-->
+      <!--  </geometry>-->
+      <!--  <material>-->
+      <!--    <diffuse>1.0 1.0 1.0</diffuse>-->
+      <!--    <specular>1.0 1.0 1.0</specular>-->
+      <!--    <pbr>-->
+      <!--      <metal>-->
+      <!--        <albedo_map>model://Lake House/materials/textures/Counter_Albedo.png</albedo_map>-->
+      <!--        <normal_map>model://Lake House/materials/textures/Counter_Normal.png</normal_map>-->
+      <!--      </metal>-->
+      <!--    </pbr>-->
+      <!--    [> fallback to script if no PBR support<]-->
+      <!--    <script>-->
+      <!--      <uri>model://Lake House/materials/scripts/</uri>-->
+      <!--      <uri>model://Lake House/materials/textures/</uri>-->
+      <!--      <name>Fallback/Counter_Diffuse</name>-->
+      <!--    </script>-->
+      <!--  </material>-->
+      <!--</visual>-->
+      <!--<visual name="Hedge_visual">-->
+      <!--  <geometry>-->
+      <!--    <mesh>-->
+      <!--      <uri>model://Lake House/meshes/house.dae</uri>-->
+      <!--      <submesh>-->
+      <!--        <name>Hedge</name>-->
+      <!--        <center>false</center>-->
+      <!--      </submesh>-->
+      <!--    </mesh>-->
+      <!--  </geometry>-->
+      <!--  <material>-->
+      <!--    <diffuse>1.0 1.0 1.0</diffuse>-->
+      <!--    <specular>1.0 1.0 1.0</specular>-->
+      <!--    <pbr>-->
+      <!--      <metal>-->
+      <!--        <albedo_map>model://Lake House/materials/textures/Hedges_Albedo.png</albedo_map>-->
+      <!--        <normal_map>model://Lake House/materials/textures/Hedges_Normal.png</normal_map>-->
+      <!--        <roughness_map>model://Lake House/materials/textures/Hedges_Roughness.png</roughness_map>-->
+      <!--      </metal>-->
+      <!--    </pbr>-->
+      <!--    [> fallback to script if no PBR support<]-->
+      <!--    <script>-->
+      <!--      <uri>model://Lake House/materials/scripts/</uri>-->
+      <!--      <uri>model://Lake House/materials/textures/</uri>-->
+      <!--      <name>Fallback/Hedge_Diffuse</name>-->
+      <!--    </script>-->
+      <!--  </material>-->
+      <!--</visual>-->
+      <!--<visual name="Glass_visual">-->
+      <!--  <geometry>-->
+      <!--    <mesh>-->
+      <!--      <uri>model://Lake House/meshes/house.dae</uri>-->
+      <!--      <submesh>-->
+      <!--        <name>Glass</name>-->
+      <!--        <center>false</center>-->
+      <!--      </submesh>-->
+      <!--    </mesh>-->
+      <!--  </geometry>-->
+      <!--  <material>-->
+      <!--    <diffuse>1.0 1.0 1.0</diffuse>-->
+      <!--    <specular>1.0 1.0 1.0</specular>-->
+      <!--    <pbr>-->
+      <!--      <metal>-->
+      <!--        <albedo_map>model://Lake House/materials/textures/Glass.png</albedo_map>-->
+      <!--      </metal>-->
+      <!--    </pbr>-->
+      <!--    [> fallback to script if no PBR support<]-->
+      <!--    <script>-->
+      <!--      <uri>model://Lake House/materials/scripts/</uri>-->
+      <!--      <uri>model://Lake House/materials/textures/</uri>-->
+      <!--      <name>Fallback/Glass_Diffuse</name>-->
+      <!--    </script>-->
+      <!--  </material>-->
+      <!--</visual>-->
+      <!--<visual name="Floor_visual">-->
+      <!--  <geometry>-->
+      <!--    <mesh>-->
+      <!--      <uri>model://Lake House/meshes/house.dae</uri>-->
+      <!--      <submesh>-->
+      <!--        <name>Floor</name>-->
+      <!--        <center>false</center>-->
+      <!--      </submesh>-->
+      <!--    </mesh>-->
+      <!--  </geometry>-->
+      <!--  <material>-->
+      <!--    <diffuse>1.0 1.0 1.0</diffuse>-->
+      <!--    <specular>1.0 1.0 1.0</specular>-->
+      <!--    <pbr>-->
+      <!--      <metal>-->
+      <!--        <albedo_map>model://Lake House/materials/textures/Floor_Albedo.png</albedo_map>-->
+      <!--        <normal_map>model://Lake House/materials/textures/Floor_Normal.png</normal_map>-->
+      <!--        <roughness_map>model://Lake House/materials/textures/Floor_Roughness.png</roughness_map>-->
+      <!--      </metal>-->
+      <!--    </pbr>-->
+      <!--    [> fallback to script if no PBR support<]-->
+      <!--    <script>-->
+      <!--      <uri>model://Lake House/materials/scripts/</uri>-->
+      <!--      <uri>model://Lake House/materials/textures/</uri>-->
+      <!--      <name>Fallback/Floor_Diffuse</name>-->
+      <!--    </script>-->
+      <!--  </material>-->
+      <!--</visual>-->
+      <!--<visual name="WallWhite_visual">-->
+      <!--  <geometry>-->
+      <!--    <mesh>-->
+      <!--      <uri>model://Lake House/meshes/house.dae</uri>-->
+      <!--      <submesh>-->
+      <!--        <name>WallWhite</name>-->
+      <!--        <center>false</center>-->
+      <!--      </submesh>-->
+      <!--    </mesh>-->
+      <!--  </geometry>-->
+      <!--  <material>-->
+      <!--    <diffuse>1.0 1.0 1.0</diffuse>-->
+      <!--    <specular>1.0 1.0 1.0</specular>-->
+      <!--    <pbr>-->
+      <!--      <metal>-->
+      <!--        <albedo_map>model://Lake House/materials/textures/WallWhite_Albedo.png</albedo_map>-->
+      <!--        <normal_map>model://Lake House/materials/textures/Wall_Normal.png</normal_map>-->
+      <!--        <roughness_map>model://Lake House/materials/textures/Wall_Roughness.png</roughness_map>-->
+      <!--      </metal>-->
+      <!--    </pbr>-->
+      <!--    [> fallback to script if no PBR support<]-->
+      <!--    <script>-->
+      <!--      <uri>model://Lake House/materials/scripts/</uri>-->
+      <!--      <uri>model://Lake House/materials/textures/</uri>-->
+      <!--      <name>Fallback/WallWhite_Diffuse</name>-->
+      <!--    </script>-->
+      <!--  </material>-->
+      <!--</visual>-->
+      <!--<visual name="Stairs_visual">-->
+      <!--  <geometry>-->
+      <!--    <mesh>-->
+      <!--      <uri>model://Lake House/meshes/house.dae</uri>-->
+      <!--      <submesh>-->
+      <!--        <name>Stairs</name>-->
+      <!--        <center>false</center>-->
+      <!--      </submesh>-->
+      <!--    </mesh>-->
+      <!--  </geometry>-->
+      <!--  <material>-->
+      <!--    <diffuse>1.0 1.0 1.0</diffuse>-->
+      <!--    <specular>1.0 1.0 1.0</specular>-->
+      <!--    <pbr>-->
+      <!--      <metal>-->
+      <!--        <albedo_map>model://Lake House/materials/textures/Stairs_Albedo.png</albedo_map>-->
+      <!--        <normal_map>model://Lake House/materials/textures/Stairs_Normal.png</normal_map>-->
+      <!--        <roughness_map>model://Lake House/materials/textures/Stairs_Roughness.png</roughness_map>-->
+      <!--      </metal>-->
+      <!--    </pbr>-->
+      <!--    [> fallback to script if no PBR support<]-->
+      <!--    <script>-->
+      <!--      <uri>model://Lake House/materials/scripts/</uri>-->
+      <!--      <uri>model://Lake House/materials/textures/</uri>-->
+      <!--      <name>Fallback/Stairs_Diffuse</name>-->
+      <!--    </script>-->
+      <!--  </material>-->
+      <!--</visual>-->
       <collision name="Box264">
         <pose>6.48595 22.671 4.39152 0.0 0.0 -2.00713</pose>
         <geometry>

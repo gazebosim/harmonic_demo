@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <sdf version="1.11">
-  <model name="cart_pole">
+  <model name="CartPole">
     <joint name="fix_to_world" type="fixed">
       <parent>world</parent>
       <child>base</child>
@@ -11,8 +11,8 @@
         <pose degrees="true">0 0 0   0 90 0</pose>
         <geometry>
           <cylinder>
-            <length>6.3</length>
-            <radius>0.02</radius>
+            <length>1.65</length>
+            <radius>0.01</radius>
           </cylinder>
         </geometry>
         <material>
@@ -21,10 +21,10 @@
         </material>
       </visual>
       <visual name="lower_limit">
-        <pose>-3.15 0 0   0 0 0</pose>
+        <pose>-0.825 0 0   0 0 0</pose>
         <geometry>
           <box>
-            <size>0.1 0.1 0.1</size>
+            <size>0.05 0.05 0.15</size>
           </box>
         </geometry>
         <material>
@@ -33,10 +33,10 @@
         </material>
       </visual>
       <visual name="upper_limit">
-        <pose>3.15 0 0   0 0 0</pose>
+        <pose>0.825 0 0   0 0 0</pose>
         <geometry>
           <box>
-            <size>0.1 0.1 0.1</size>
+            <size>0.05 0.05 0.15</size>
           </box>
         </geometry>
         <material>
@@ -51,8 +51,8 @@
       <axis>
         <xyz>1 0 0</xyz>
         <limit>
-          <lower>-3</lower>
-          <upper>3</upper>
+          <lower>-1</lower>
+          <upper>1</upper>
         </limit>
       </axis>
     </joint>
@@ -62,7 +62,7 @@
       <visual name="visual">
         <geometry>
           <box>
-            <size>0.2 0.1 0.1</size>
+            <size>0.1 0.05 0.05</size>
           </box>
         </geometry>
         <material>
@@ -74,7 +74,7 @@
         <density>100</density>
         <geometry>
           <box>
-            <size>0.2 0.1 0.1</size>
+            <size>0.1 0.05 0.05</size>
           </box>
         </geometry>
       </collision>
@@ -90,13 +90,13 @@
     </joint>
 
     <link name="pole">
-      <pose>0 0.07 0.4   0 0 0</pose>
+      <pose>0 0.035 0.2   0 0 0</pose>
       <inertial auto="true"/>
       <visual name="visual">
         <geometry>
           <cylinder>
-            <length>0.8</length>
-            <radius>0.02</radius>
+            <length>0.4</length>
+            <radius>0.01</radius>
           </cylinder>
         </geometry>
         <material>
@@ -108,8 +108,8 @@
         <density>1</density>
         <geometry>
           <cylinder>
-            <length>0.4</length>
-            <radius>0.02</radius>
+            <length>0.2</length>
+            <radius>0.01</radius>
           </cylinder>
         </geometry>
       </collision>
@@ -121,12 +121,12 @@
     </joint>
 
     <link name="point_mass">
-      <pose relative_to="pole">0 0.0 0.4   0 0 0</pose>
+      <pose relative_to="pole">0 0.0 0.2   0 0 0</pose>
       <inertial auto="true"/>
       <visual name="visual">
         <geometry>
           <sphere>
-            <radius>0.04</radius>
+            <radius>0.02</radius>
           </sphere>
         </geometry>
         <material>
@@ -138,7 +138,7 @@
         <density>100</density>
         <geometry>
           <sphere>
-            <radius>0.04</radius>
+            <radius>0.02</radius>
           </sphere>
         </geometry>
       </collision>
