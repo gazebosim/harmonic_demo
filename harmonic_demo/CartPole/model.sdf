@@ -67,7 +67,7 @@
           </box>
         </geometry>
         <material>
-          <diffuse>0.5 0.0 0.0</diffuse>
+          <diffuse>0.3 0.1 0.1</diffuse>
           <specular>0.1 0.1 0.1</specular>
         </material>
       </visual>
@@ -101,8 +101,7 @@
           </cylinder>
         </geometry>
         <material>
-          <diffuse>0.8 0.8 0.8</diffuse>
-          <specular>0.8 0.8 0.8</specular>
+          <diffuse>0.3 0.3 0.3</diffuse>
         </material>
       </visual>
       <collision name="collision">
@@ -131,8 +130,7 @@
           </sphere>
         </geometry>
         <material>
-          <diffuse>1.0 1.0 1.0</diffuse>
-          <specular>1.0 1.0 1.0</specular>
+          <diffuse>0.3 0.3 0.3</diffuse>
         </material>
       </visual>
       <collision name="collision">
