@@ -18,3 +18,10 @@ For the Cart-Pole demo, the python modules `numpy` and `scipy` are required. On 
 ```
 sudo apt install python3-scipy python3-numpy
 ```
+
+If you built Gazebo from source, you'll also need to set `PYTHONPATH`. If using colcon for example, and your workspace 
+is `~/ws/harmonic`, then:
+
+```
+export PYTHONPATH=~/ws/harmonic/install/lib/python:$PYTHONPATH
+```
