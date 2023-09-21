@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<sdf version="1.9">
+  <model name="harmonic_mascot">
+    <static>true</static>
+    <link name="base_link">
+      <collision name="collision">
+        <pose>0 0 0 0 0 1.57</pose>
+        <geometry>
+          <mesh>
+            <uri>meshes/harmonic_mascot.dae</uri>
+            <scale>0.25 0.25 0.25</scale>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <pose>0 0 0 0 0 1.57</pose>
+        <geometry>
+          <mesh>
+            <uri>meshes/harmonic_mascot.dae</uri>
+            <scale>0.25 0.25 0.25</scale>
+          </mesh>
+        </geometry>
+      </visual>
+      <projector name="projector">
+        <pose>0 0 0 0 0 0</pose>
+        <near_clip>1</near_clip>
+        <far_clip>4.2</far_clip>
+        <fov>0.25</fov>
+        <texture>materials/textures/harmonic_logo.png</texture>
+      </projector>
+    </link>
+  </model>
+</sdf>
