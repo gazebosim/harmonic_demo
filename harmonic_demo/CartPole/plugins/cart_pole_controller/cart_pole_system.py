@@ -15,14 +15,13 @@
 from gz.sim8 import Model, Link, Joint
 from gz.transport13 import Node
 from gz.msgs10.double_pb2 import Double
+from gz.msgs10.vector2d_pb2 import Vector2d
 from gz.msgs10.empty_pb2 import Empty
 import numpy as np
 from threading import Lock
 import importlib
 from . import lqr_controller
 
-# Ideas:
-# - Publish state and plot it
 
 class CartPoleSystem(object):
 
@@ -58,6 +57,13 @@ class CartPoleSystem(object):
         self.node.subscribe(Empty, reload_controller_topic, self.reload_controller_cb)
         self.controller_lock = Lock()
 
+        state_topic = sdf.get_string("state_topic", "state")[0]
+        position_topic = state_topic + "/position"
+        velocity_topic = state_topic + "/velocity"
+        print(f"Advertising to {position_topic} and {velocity_topic}")
+        self.position_pub = self.node.advertise(position_topic, Vector2d)
+        self.velocity_pub = self.node.advertise(velocity_topic, Vector2d)
+
     def init_controller(self):
         # TODO Get these from the model
         mass_cart = 0.2
@@ -84,7 +90,8 @@ class CartPoleSystem(object):
             self.pole_joint.position(ecm)[0],
             self.pole_joint.velocity(ecm)[0]
         ])
-        print(x)
+
+        self.publish_state(x)
 
         with self.controller_lock:
             u = self.controller.compute(x)
@@ -102,6 +109,17 @@ class CartPoleSystem(object):
             importlib.reload(lqr_controller)
             self.init_controller()
 
+    def publish_state(self, x):
+        position_msg = Vector2d()
+        position_msg.x = x[0]
+        position_msg.y = x[2]
+
+        velocity_msg = Vector2d()
+        velocity_msg.x = x[1]
+        velocity_msg.y = x[3]
+
+        self.position_pub.publish(position_msg)
+        self.velocity_pub.publish(velocity_msg)
 
 
 def get_system():

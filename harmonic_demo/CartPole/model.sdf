@@ -149,6 +149,7 @@
       <initial_angle>0.5</initial_angle>
       <reset_angle_topic>cart_pole/reset_angle</reset_angle_topic>
       <reload_controller_topic>cart_pole/reload_controller</reload_controller_topic>
+      <state_topic>cart_pole/state</state_topic>
     </plugin>
   </model>
 </sdf>
