@@ -41,6 +41,18 @@
       <specular>0.1 0.1 0.1 1</specular>
       <intensity>2</intensity>
     </light>
+    <light type="point" name="point_light">
+      <pose>0.73 0.09 8.77 0 0 0</pose>
+      <diffuse>1 1 1 1</diffuse>
+      <specular>.1 .1 .1 1</specular>
+      <attenuation>
+        <range>20</range>
+        <linear>0.2</linear>
+        <constant>0.8</constant>
+        <quadratic>0.01</quadratic>
+      </attenuation>
+      <cast_shadows>false</cast_shadows>
+    </light>
     <include>
       <name>Lake House</name>
       <uri>Lake House</uri>
@@ -61,12 +73,12 @@
     </include>
     <include>
       <name>Armchair_01</name>
-      <pose>-0.24 -0.13 6.90 0 0 -1.83</pose>
+      <pose>-0.24 -0.13 6.90 0 0 -0.77</pose>
       <uri>Armchair</uri>
     </include>
     <include>
       <name>Armchair_02</name>
-      <pose>-0.12 -1.44 6.90 0 0 -1.05</pose>
+      <pose>-0.12 -1.44 6.90 0 0 -1.75</pose>
       <uri>Armchair</uri>
     </include>
     <include>
@@ -123,6 +135,26 @@
       <pose>3.03 0.49 9.46 0 0 1.57</pose>
       <name>Vanity</name>
       <uri>Vanity</uri>
+    </include>
+    <include>
+      <pose>-0.39 2.31 9.48 0 0 -1.57</pose>
+      <name>Desk</name>
+      <uri>Desk</uri>
+    </include>
+    <include>
+      <pose>-0.74 1.45 9.48 0 0 -0.81</pose>
+      <name>Office Chair</name>
+      <uri>Office Chair</uri>
+    </include>
+    <include>
+      <pose>2.98 0.85 6.91 0 0 -2.37</pose>
+      <name>Piano</name>
+      <uri>Piano</uri>
+    </include>
+    <include>
+      <pose>0 0 0 0 0 2.6</pose>
+      <name>Sky</name>
+      <uri>Sky</uri>
     </include>
 
     <!-- wide-angle camera model with lens flare plugin -->
