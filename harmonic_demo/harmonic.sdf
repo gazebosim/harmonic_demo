@@ -301,18 +301,6 @@
       </attenuation>
       <cast_shadows>false</cast_shadows>
     </light>
-    <light type="point" name="point_light_upper">
-      <pose>0.73 0.09 11.7 0 0 0</pose>
-      <diffuse>1 1 1 1</diffuse>
-      <specular>.05 .05 .05 1</specular>
-      <attenuation>
-        <range>10</range>
-        <linear>0.4</linear>
-        <constant>0.8</constant>
-        <quadratic>0.01</quadratic>
-      </attenuation>
-      <cast_shadows>false</cast_shadows>
-    </light>
     <include>
       <name>Lake House</name>
       <uri>Lake House</uri>
