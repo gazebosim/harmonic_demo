@@ -461,7 +461,7 @@
     <include>
       <pose>0.52 2.07 10.24 0 0 -0.94</pose>
       <name>Harmonic Mascot</name>
-      <uri>Harmonic Mascot</uri>3.482 -4.28 8.87 0 0 0
+      <uri>Harmonic Mascot</uri>
     </include>
 
     <model name="camera">
