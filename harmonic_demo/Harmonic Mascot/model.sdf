@@ -42,6 +42,24 @@
         <fov>0.4</fov>
         <texture>materials/textures/harmonic_logo.png</texture>
       </projector>
+      <light name="projector_light" type="spot">
+        <pose>0.13 -0.09 0.25 0 -0.3 0</pose>
+        <diffuse>1 1 1 1</diffuse>
+        <specular>0.5 0.5 0.5 1</specular>
+        <attenuation>
+          <range>5</range>
+          <linear>0.5</linear>
+          <constant>0.8</constant>
+          <quadratic>0.01</quadratic>
+        </attenuation>
+        <direction>1 0 0</direction>
+        <spot>
+          <inner_angle>0.1</inner_angle>
+          <outer_angle>0.6</outer_angle>
+          <falloff>0.8</falloff>
+        </spot>
+        <cast_shadows>false</cast_shadows>
+      </light>
     </link>
   </model>
 </sdf>
