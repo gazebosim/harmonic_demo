@@ -424,7 +424,7 @@
     </include>
     <include>
       <name>Tethys</name>
-      <pose>-40 60 -0.6 0 0 -1.25</pose>
+      <pose>-40 60 -0.8 0 0 -1.25</pose>
       <uri>Tethys Sensors</uri>
 
       <plugin
