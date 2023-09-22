@@ -38,7 +38,7 @@
       <projector name="projector">
         <pose>0.13 -0.09 0.25 0 -0.3 0</pose>
         <near_clip>1</near_clip>
-        <far_clip>2.8</far_clip>
+        <far_clip>1.8</far_clip>
         <fov>0.4</fov>
         <texture>materials/textures/harmonic_logo.png</texture>
       </projector>

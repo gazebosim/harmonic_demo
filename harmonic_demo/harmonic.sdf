@@ -292,10 +292,22 @@
     <light type="point" name="point_light">
       <pose>0.73 0.09 8.77 0 0 0</pose>
       <diffuse>1 1 1 1</diffuse>
-      <specular>.1 .1 .1 1</specular>
+      <specular>.05 .05 .05 1</specular>
       <attenuation>
         <range>20</range>
         <linear>0.2</linear>
+        <constant>0.8</constant>
+        <quadratic>0.01</quadratic>
+      </attenuation>
+      <cast_shadows>false</cast_shadows>
+    </light>
+    <light type="point" name="point_light_upper">
+      <pose>0.73 0.09 11.7 0 0 0</pose>
+      <diffuse>1 1 1 1</diffuse>
+      <specular>.05 .05 .05 1</specular>
+      <attenuation>
+        <range>10</range>
+        <linear>0.4</linear>
         <constant>0.8</constant>
         <quadratic>0.01</quadratic>
       </attenuation>
@@ -410,7 +422,7 @@
       <uri>Sky</uri>
     </include>
     <include>
-      <pose>0 -0.1 9.46 0 0 0.0</pose>
+      <pose>1.1 -0.6 9.46 0 0 0.0</pose>
       <name>Harmonic Mascot</name>
       <uri>Harmonic Mascot</uri>
     </include>
