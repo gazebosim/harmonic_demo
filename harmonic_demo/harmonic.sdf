@@ -455,7 +455,7 @@
     </include>
     <include>
       <pose>0 0 0 0 0 2.6</pose>
-      <name>Sky</name>3.482 -4.28 8.87 0 0 0
+      <name>Sky</name>
       <uri>Sky</uri>
     </include>
     <include>
