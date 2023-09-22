@@ -403,6 +403,11 @@
       <uri>Office Chair</uri>
     </include>
     <include>
+      <name>Pendulum_sculpture</name>
+      <pose>3.43 -3.82 7.64 0 0 1.57</pose>
+      <uri>pendulum_sculpture</uri>
+    </include>
+    <include>
       <pose>2.98 0.85 6.91 0 0 -2.37</pose>
       <name>Piano</name>
       <uri>Piano</uri>
