@@ -44,7 +44,7 @@ class CartPoleSystem(object):
         self.pole_joint.enable_velocity_check(ecm)
 
         self.pole_joint.reset_position(ecm, [initial_angle])
-        self.init_controller(sdf, ecm)
+        self.init_controller()
 
         self.node = Node()
         reset_angle_topic = sdf.get_string("reset_angle_topic", "reset_angle")[0]
@@ -66,7 +66,7 @@ class CartPoleSystem(object):
         self.position_pub = self.node.advertise(position_topic, Vector2d)
         self.velocity_pub = self.node.advertise(velocity_topic, Vector2d)
 
-    def init_controller(self, sdf, ecm):
+    def init_controller(self):
         # TODO Get these from the model
         # TODO (azeey) Add API in sim::Link to get the mass of the link
         cart_mass = 0.25
