@@ -246,6 +246,23 @@
           <property type="string" key="state">docked_collapsed</property>
         </gz-gui>
       </plugin>
+      
+      <!-- Apply Force and Torque -->
+      <plugin filename="ApplyForceTorque">
+        <gz-gui>
+          <property type="string" key="state">docked_collapsed</property>
+        </gz-gui>
+      </plugin>
+
+      <!-- Mouse Drag -->
+      <plugin filename="MouseDrag">
+        <gz-gui>
+          <property type="string" key="state">docked_collapsed</property>
+        </gz-gui>
+
+        <rotation_stiffness>50</rotation_stiffness>
+        <position_stiffness>200</position_stiffness>
+      </plugin>
 
     </gui>
 
@@ -444,6 +461,11 @@
       <uri>Office Chair</uri>
     </include>
     <include>
+      <pose>1.85 -5.05 7.82 0 0 0</pose>
+      <name>Pendulum</name>
+      <uri>Pendulum</uri>
+    </include>
+    <include>
       <name>Pendulum_sculpture</name>
       <pose>3.43 -3.82 7.64 0 0 1.57</pose>
       <uri>pendulum_sculpture</uri>
@@ -496,4 +518,3 @@
     </model>
   </world>
 </sdf>
-
