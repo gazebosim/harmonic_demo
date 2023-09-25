@@ -462,6 +462,10 @@
       <name>Harmonic Mascot</name>
       <uri>Harmonic Mascot</uri>
     </include>
+    <include>
+      <pose degrees="true">-1.75 -1.04 8.37   0 0 -90</pose>
+      <uri>CartPole</uri>
+    </include>
 
     <model name="camera">
       <static>true</static>
