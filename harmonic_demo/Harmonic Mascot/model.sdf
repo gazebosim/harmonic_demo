@@ -8,7 +8,7 @@
         <geometry>
           <mesh>
             <uri>meshes/harmonic_mascot.dae</uri>
-            <scale>0.25 0.25 0.25</scale>
+            <scale>0.2 0.2 0.2</scale>
           </mesh>
         </geometry>
       </collision>
@@ -17,17 +17,49 @@
         <geometry>
           <mesh>
             <uri>meshes/harmonic_mascot.dae</uri>
-            <scale>0.25 0.25 0.25</scale>
+            <scale>0.2 0.2 0.2</scale>
           </mesh>
         </geometry>
       </visual>
+      <!-- uncomment to debug projector pose -->
+      <!--
+      <visual name="projector_debug_visual">
+        <pose>0.13 -0.09 0.25 0 -0.3 0</pose>
+        <geometry>
+          <box>
+            <size>0.02 0.02 0.02</size>
+          </box>
+        </geometry>
+        <material>
+          <diffuse>1 0 0 </diffuse>
+        </material>
+      </visual>
+      -->
       <projector name="projector">
-        <pose>0 0 0 0 0 0</pose>
+        <pose>0.13 -0.09 0.25 0 -0.3 0</pose>
         <near_clip>1</near_clip>
-        <far_clip>4.2</far_clip>
-        <fov>0.25</fov>
+        <far_clip>1.8</far_clip>
+        <fov>0.4</fov>
         <texture>materials/textures/harmonic_logo.png</texture>
       </projector>
+      <light name="projector_light" type="spot">
+        <pose>0.13 -0.09 0.25 0 -0.3 0</pose>
+        <diffuse>1 1 1 1</diffuse>
+        <specular>0.5 0.5 0.5 1</specular>
+        <attenuation>
+          <range>5</range>
+          <linear>0.5</linear>
+          <constant>0.8</constant>
+          <quadratic>0.01</quadratic>
+        </attenuation>
+        <direction>1 0 0</direction>
+        <spot>
+          <inner_angle>0.1</inner_angle>
+          <outer_angle>0.6</outer_angle>
+          <falloff>0.8</falloff>
+        </spot>
+        <cast_shadows>false</cast_shadows>
+      </light>
     </link>
   </model>
 </sdf>

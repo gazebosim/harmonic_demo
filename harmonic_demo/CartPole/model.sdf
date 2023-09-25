@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sdf version="1.11">
+  <model name="CartPole">
+    <joint name="fix_to_world" type="fixed">
+      <parent>world</parent>
+      <child>base</child>
+    </joint>
+
+    <link name="base">
+      <visual name="shaft">
+        <pose degrees="true">0 0 0   0 90 0</pose>
+        <geometry>
+          <cylinder>
+            <length>1.70</length>
+            <radius>0.01</radius>
+          </cylinder>
+        </geometry>
+        <material>
+          <diffuse>0.0 1.0 1.0 0.4</diffuse>
+          <specular>1.0 1.0 1.0 0.4</specular>
+        </material>
+      </visual>
+      <visual name="lower_limit">
+        <pose>-0.870 0 0   0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.05 0.05 0.15</size>
+          </box>
+        </geometry>
+        <material>
+          <diffuse>0.2 0.1 0.1</diffuse>
+          <specular>0.2 0.2 0.2</specular>
+        </material>
+      </visual>
+      <visual name="upper_limit">
+        <pose>0.870 0 0   0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.05 0.05 0.15</size>
+          </box>
+        </geometry>
+        <material>
+          <diffuse>0.2 0.1 0.1</diffuse>
+          <specular>0.2 0.2 0.2</specular>
+        </material>
+      </visual>
+    </link>
+    <joint name="cart_joint" type="prismatic">
+      <parent>base</parent>
+      <child>cart</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-0.80</lower>
+          <upper>0.80</upper>
+          <effort>100</effort>
+        </limit>
+      </axis>
+    </joint>
+
+    <link name="cart">
+      <inertial auto="true"/>
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.1 0.05 0.05</size>
+          </box>
+        </geometry>
+        <material>
+          <diffuse>0.3 0.1 0.1</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <collision name="collision">
+        <density>1000</density>
+        <geometry>
+          <box>
+            <size>0.1 0.05 0.05</size>
+          </box>
+        </geometry>
+      </collision>
+    </link>
+
+    <joint name="pole_joint" type="revolute">
+      <pose relative_to="cart"/>
+      <parent>cart</parent>
+      <child>pole</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+
+    <link name="pole">
+      <pose>0 0.040 0.2   0 0 0</pose>
+      <inertial auto="true"/>
+      <visual name="visual">
+        <geometry>
+          <cylinder>
+            <length>0.4</length>
+            <radius>0.01</radius>
+          </cylinder>
+        </geometry>
+        <material>
+          <diffuse>0.3 0.3 0.3</diffuse>
+        </material>
+      </visual>
+      <collision name="collision">
+        <density>1</density>
+        <geometry>
+          <cylinder>
+            <length>0.4</length>
+            <radius>0.01</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+    </link>
+
+    <joint name="pole_point_mass_joint" type="fixed">
+      <parent>pole</parent>
+      <child>point_mass</child>
+    </joint>
+
+    <link name="point_mass">
+      <pose relative_to="pole">0 0.0 0.2   0 0 0</pose>
+      <inertial auto="true"/>
+      <visual name="visual">
+        <geometry>
+          <sphere>
+            <radius>0.02</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <diffuse>0.3 0.3 0.3</diffuse>
+        </material>
+      </visual>
+      <collision name="collision">
+        <density>1000</density>
+        <geometry>
+          <sphere>
+            <radius>0.02</radius>
+          </sphere>
+        </geometry>
+      </collision>
+    </link>
+
+    <plugin filename="gz-sim-python-system-loader-system" name="gz::sim::systems::PythonSystemLoader">
+      <module_name>cart_pole_controller</module_name>
+      <initial_angle>0.2</initial_angle>
+      <reset_angle_topic>cart_pole/reset_angle</reset_angle_topic>
+      <reload_controller_topic>cart_pole/reload_controller</reload_controller_topic>
+      <state_topic>cart_pole/state</state_topic>
+    </plugin>
+  </model>
+</sdf>
+
