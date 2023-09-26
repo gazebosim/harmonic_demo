@@ -914,7 +914,7 @@
         <parent>base</parent>
         <child>rack</child>
         <axis>
-          <xyz>0 1.0 0</xyz>
+          <xyz>0 -1.0 0</xyz>
           <mimic joint="upper_joint">
             <multiplier>0.105</multiplier>
           </mimic>
