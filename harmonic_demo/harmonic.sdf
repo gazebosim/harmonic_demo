@@ -323,6 +323,15 @@
       filename="gz-sim-scene-broadcaster-system"
       name="gz::sim::systems::SceneBroadcaster">
     </plugin>
+    <plugin
+      filename="gz-sim-buoyancy-system"
+      name="gz::sim::systems::Buoyancy">
+      <uniform_fluid_density>1000</uniform_fluid_density>
+    </plugin>
+    <plugin
+      filename="gz-sim-dvl-system"
+      name="gz::sim::systems::DopplerVelocityLogSystem">
+    </plugin>
 
     <gravity>0 0 -9.8</gravity>
     <scene>
@@ -519,6 +528,150 @@
       <pose degrees="true">-1.75 -1.04 8.37   0 0 -90</pose>
       <uri>CartPole</uri>
     </include>
+    <include>
+      <name>Tethys</name>
+      <pose>-40 60 -0.8 0 0 -1.25</pose>
+      <uri>Tethys Sensors</uri>
+
+      <plugin
+        filename="gz-sim-odometry-publisher-system"
+        name="gz::sim::systems::OdometryPublisher">
+      </plugin>
+
+      <!-- Joint controllers -->
+      <plugin
+        filename="gz-sim-joint-position-controller-system"
+        name="gz::sim::systems::JointPositionController">
+        <joint_name>horizontal_fins_joint</joint_name>
+        <p_gain>0.1</p_gain>
+      </plugin>
+
+      <plugin
+        filename="gz-sim-joint-position-controller-system"
+        name="gz::sim::systems::JointPositionController">
+        <joint_name>vertical_fins_joint</joint_name>
+        <p_gain>0.1</p_gain>
+      </plugin>
+
+      <plugin
+        filename="gz-sim-thruster-system"
+        name="gz::sim::systems::Thruster">
+        <namespace>tethys</namespace>
+        <use_angvel_cmd>0</use_angvel_cmd>
+        <joint_name>propeller_joint</joint_name>
+        <thrust_coefficient>0.004422</thrust_coefficient>
+        <fluid_density>1000</fluid_density>
+        <propeller_diameter>0.2</propeller_diameter>
+      </plugin>
+
+      <!-- Lift and drag -->
+
+      <!-- Vertical fin -->
+      <plugin
+        filename="gz-sim-lift-drag-system"
+        name="gz::sim::systems::LiftDrag">
+        <air_density>1000</air_density>
+        <cla>4.13</cla>
+        <cla_stall>-1.1</cla_stall>
+        <cda>0.2</cda>
+        <cda_stall>0.03</cda_stall>
+        <alpha_stall>0.17</alpha_stall>
+        <a0>0</a0>
+        <area>0.0244</area>
+        <upward>0 1 0</upward>
+        <forward>1 0 0</forward>
+        <link_name>vertical_fins</link_name>
+        <cp>0 0 0</cp>
+      </plugin>
+
+      <!-- Horizontal fin -->
+      <plugin
+        filename="gz-sim-lift-drag-system"
+        name="gz::sim::systems::LiftDrag">
+        <air_density>1000</air_density>
+        <cla>4.13</cla>
+        <cla_stall>-1.1</cla_stall>
+        <cda>0.2</cda>
+        <cda_stall>0.03</cda_stall>
+        <alpha_stall>0.17</alpha_stall>
+        <a0>0</a0>
+        <area>0.0244</area>
+        <upward>0 0 1</upward>
+        <forward>1 0 0</forward>
+        <link_name>horizontal_fins</link_name>
+        <cp>0 0 0</cp>
+      </plugin>
+
+      <plugin
+        filename="gz-sim-hydrodynamics-system"
+        name="gz::sim::systems::Hydrodynamics">
+        <link_name>base_link</link_name>
+        <xDotU>-4.876161</xDotU>
+        <yDotV>-126.324739</yDotV>
+        <zDotW>-126.324739</zDotW>
+        <kDotP>0</kDotP>
+        <mDotQ>-33.46</mDotQ>
+        <nDotR>-33.46</nDotR>
+        <xUabsU>-6.2282</xUabsU>
+        <xU>0</xU>
+        <yVabsV>-601.27</yVabsV>
+        <yV>0</yV>
+        <zWabsW>-601.27</zWabsW>
+        <zW>0</zW>
+        <kPabsP>-0.1916</kPabsP>
+        <kP>0</kP>
+        <mQabsQ>-632.698957</mQabsQ>
+        <mQ>0</mQ>
+        <nRabsR>-632.698957</nRabsR>
+        <nR>0</nR>
+      </plugin>
+    </include>
+
+    <model name="boundary">
+      <static>true</static>
+      <link name="link">
+        <collision name="x">
+          <pose>3000 0 0 0 0 0</pose>
+          <geometry>
+          <box>
+            <size>1 6000 6000</size>
+          </box>
+          </geometry>
+        </collision>
+        <collision name="y">
+          <pose>0 3000 0 0 0 0</pose>
+          <geometry>
+          <box>
+            <size>6000 1 6000</size>
+          </box>
+          </geometry>
+        </collision>
+        <collision name="x_neg">
+          <pose>-3000 0 0 0 0 0</pose>
+          <geometry>
+          <box>
+            <size>1 6000 6000</size>
+          </box>
+          </geometry>
+        </collision>
+        <collision name="y_neg">
+          <pose>0 -3000 0 0 0 0</pose>
+          <geometry>
+          <box>
+            <size>6000 1 6000</size>
+          </box>
+          </geometry>
+        </collision>
+        <collision name="bottom">
+          <pose>0 0 -3000 0 0 0</pose>
+          <geometry>
+          <box>
+            <size>6000 6000 1</size>
+          </box>
+          </geometry>
+        </collision>
+      </link>
+    </model>
 
     <model name="camera">
       <static>true</static>
