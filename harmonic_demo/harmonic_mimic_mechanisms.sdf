@@ -72,7 +72,7 @@
     </model>
 
     <model name="four_bar_linkage_mimic">
-      <pose degrees="true">-4 -1 0 0 0 180</pose>
+      <pose degrees="true">-4.7 -1 0 0 0 180</pose>
       <frame name="base_plate_center" attached_to="base">
         <pose>0 0 0.01 0 0 0</pose>
       </frame>
@@ -143,7 +143,7 @@
           <pose relative_to="base_pole_top"/>
           <geometry>
             <box>
-              <size>0.5 1.0 0.02</size>
+              <size>0.4 1.0 0.02</size>
             </box>
           </geometry>
         </collision>
@@ -151,7 +151,7 @@
           <pose relative_to="base_pole_top"/>
           <geometry>
             <box>
-              <size>0.5 1.0 0.02</size>
+              <size>0.4 1.0 0.02</size>
             </box>
           </geometry>
           <material>
@@ -197,9 +197,10 @@
             </cylinder>
           </geometry>
           <material>
-            <ambient>0.8 0.8 0.8 1</ambient>
-            <diffuse>0.8 0.8 0.8 1</diffuse>
-            <specular>0.8 0.8 0.8 1</specular>
+            <ambient>0.7 0.9 1.0 1</ambient>
+            <diffuse>0.7 0.9 1.0 1</diffuse>
+            <specular>0.4 0.4 0.4 1</specular>
+            <emissive>0.0 0.1 0.1 1</emissive>
           </material>
         </visual>
         <collision name="col_bob">
@@ -220,9 +221,10 @@
             </cylinder>
           </geometry>
           <material>
-            <ambient>0.8 0.8 0.8 1</ambient>
-            <diffuse>0.8 0.8 0.8 1</diffuse>
-            <specular>0.8 0.8 0.8 1</specular>
+            <ambient>0.3 0.3 0.8 1</ambient>
+            <diffuse>0.3 0.3 0.8 1</diffuse>
+            <specular>0.4 0.4 0.4 1</specular>
+            <emissive>0.0 0.0 0.1 1</emissive>
           </material>
         </visual>
         <collision name="col_long_cylinder">
@@ -283,9 +285,10 @@
             </cylinder>
           </geometry>
           <material>
-            <ambient>0.8 0.8 0.8 1</ambient>
-            <diffuse>0.8 0.8 0.8 1</diffuse>
-            <specular>0.8 0.8 0.8 1</specular>
+            <ambient>0.7 0.9 1.0 1</ambient>
+            <diffuse>0.7 0.9 1.0 1</diffuse>
+            <specular>0.4 0.4 0.4 1</specular>
+            <emissive>0.0 0.1 0.1 1</emissive>
           </material>
         </visual>
         <collision name="col_bob">
@@ -306,9 +309,9 @@
             </cylinder>
           </geometry>
           <material>
-            <ambient>0.8 0.8 0.8 1</ambient>
-            <diffuse>0.8 0.8 0.8 1</diffuse>
-            <specular>0.8 0.8 0.8 1</specular>
+            <ambient>0.4 0.4 0.4 1</ambient>
+            <diffuse>0.4 0.4 0.4 1</diffuse>
+            <specular>0.4 0.4 0.4 1</specular>
           </material>
         </visual>
         <collision name="col_long_cylinder">
@@ -391,7 +394,7 @@
     </model>
 
     <model name="four_bar_linkage_without_mimic">
-      <pose degrees="true">-4 1 0 0 0 180</pose>
+      <pose degrees="true">-4.7 1 0 0 0 180</pose>
       <frame name="base_plate_center" attached_to="base">
         <pose>0 0 0.01 0 0 0</pose>
       </frame>
@@ -462,7 +465,7 @@
           <pose relative_to="base_pole_top"/>
           <geometry>
             <box>
-              <size>0.5 1.0 0.02</size>
+              <size>0.4 1.0 0.02</size>
             </box>
           </geometry>
         </collision>
@@ -470,7 +473,7 @@
           <pose relative_to="base_pole_top"/>
           <geometry>
             <box>
-              <size>0.5 1.0 0.02</size>
+              <size>0.4 1.0 0.02</size>
             </box>
           </geometry>
           <material>
@@ -516,9 +519,10 @@
             </cylinder>
           </geometry>
           <material>
-            <ambient>0.8 0.8 0.8 1</ambient>
-            <diffuse>0.8 0.8 0.8 1</diffuse>
-            <specular>0.8 0.8 0.8 1</specular>
+            <ambient>0.3 0.8 0.3 1</ambient>
+            <diffuse>0.3 0.8 0.3 1</diffuse>
+            <specular>0.4 0.4 0.4 1</specular>
+            <emissive>0.0 0.1 0.0 1</emissive>
           </material>
         </visual>
         <collision name="col_bob">
@@ -539,9 +543,10 @@
             </cylinder>
           </geometry>
           <material>
-            <ambient>0.8 0.8 0.8 1</ambient>
-            <diffuse>0.8 0.8 0.8 1</diffuse>
-            <specular>0.8 0.8 0.8 1</specular>
+            <ambient>0.8 0.8 0.3 1</ambient>
+            <diffuse>0.8 0.8 0.3 1</diffuse>
+            <specular>0.4 0.4 0.4 1</specular>
+            <emissive>0.1 0.1 0.0 1</emissive>
           </material>
         </visual>
         <collision name="col_long_cylinder">
@@ -602,9 +607,10 @@
             </cylinder>
           </geometry>
           <material>
-            <ambient>0.8 0.8 0.8 1</ambient>
-            <diffuse>0.8 0.8 0.8 1</diffuse>
-            <specular>0.8 0.8 0.8 1</specular>
+            <ambient>0.8 0.3 0.3 1</ambient>
+            <diffuse>0.8 0.3 0.3 1</diffuse>
+            <specular>0.4 0.4 0.4 1</specular>
+            <emissive>0.1 0.0 0.0 1</emissive>
           </material>
         </visual>
         <collision name="col_bob">
@@ -625,9 +631,9 @@
             </cylinder>
           </geometry>
           <material>
-            <ambient>0.8 0.8 0.8 1</ambient>
-            <diffuse>0.8 0.8 0.8 1</diffuse>
-            <specular>0.8 0.8 0.8 1</specular>
+            <ambient>0.4 0.4 0.4 1</ambient>
+            <diffuse>0.4 0.4 0.4 1</diffuse>
+            <specular>0.4 0.4 0.4 1</specular>
           </material>
         </visual>
         <collision name="col_long_cylinder">
