@@ -1,0 +1,160 @@
+<?xml version="1.0" ?>
+<sdf version="1.11">
+  <model name="fidget_spinner">
+    <link name="fidget_spinner">
+      <pose>0 0 0 0 0 0</pose>
+      <inertial auto="true" />
+      <collision name="fidget_spinner_col">
+        <pose>0 0 0 1.57 0 0</pose>
+        <density>1000.0</density>
+        <geometry>
+          <mesh>
+            <uri>meshes/Spinner_scaled.stl</uri>
+            <!-- <scale>0.0025 0.0025 0.0025</scale> -->
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name="fidget_spinner_vis">
+        <pose>0 0 0 1.57 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>meshes/Spinner_scaled.stl</uri>
+            <!-- <scale>0.0025 0.0025 0.0025</scale> -->
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.8627 0.078 0.235 1.0</diffuse>
+          <ambient>0.8627 0.078 0.235 1.0</ambient>
+          <specular>0.8627 0.078 0.235 1.0</specular>
+        </material>
+      </visual>
+      <collision name="cylinder_weight_col">
+        <density>2710.0</density>
+        <pose>0 0.05 0 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.015</length>
+            <radius>0.024</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name="cylinder_weight_col">
+        <pose>0 0.05 0 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.015</length>
+            <radius>0.024</radius>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.66 1 1 1</ambient>
+          <diffuse>0.66 1 1 1</diffuse>
+          <specular>0.66 1 1 1</specular>
+          <pbr>
+            <metal>
+              <metalness>0.4</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <collision name="cylinder_weight2_col">
+        <density>2710.0</density>
+        <pose>-0.0435 -0.025 0 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.015</length>
+            <radius>0.024</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name="cylinder_weight2">
+        <pose>-0.0435 -0.025 0 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.015</length>
+            <radius>0.024</radius>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.66 1 1 1</ambient>
+          <diffuse>0.66 1 1 1</diffuse>
+          <specular>0.66 1 1 1</specular>
+          <pbr>
+            <metal>
+              <metalness>0.4</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <collision name="cylinder_weight3_col">
+        <density>2710.0</density>
+        <pose>0.0435 -0.025 0 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.015</length>
+            <radius>0.024</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name="cylinder_weight3">
+        <pose>0.0435 -0.025 0 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.015</length>
+            <radius>0.024</radius>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.66 1 1 1</ambient>
+          <diffuse>0.66 1 1 1</diffuse>
+          <specular>0.66 1 1 1</specular>
+          <pbr>
+            <metal>
+              <metalness>0.4</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+    </link>
+    <model name="central_cylinder_pivot">
+      <static>true</static>
+      <link name="cylinder_pivot">
+        <collision name="cylinder_pivot_col">
+          <geometry>
+            <cylinder>
+              <length>0.02</length>
+              <radius>0.024</radius>
+            </cylinder>
+          </geometry>
+        </collision>
+        <visual name="cylinder_pivot_vis">
+          <geometry>
+            <cylinder>
+              <length>0.02</length>
+              <radius>0.024</radius>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.66 1 1 1</ambient>
+            <diffuse>0.66 1 1 1</diffuse>
+            <specular>0.66 1 1 1</specular>
+            <pbr>
+              <metal>
+                <metalness>0.4</metalness>
+              </metal>
+            </pbr>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <joint name="pivot" type="revolute">
+      <pose>0 0 0 0 0 0</pose>
+      <parent>fidget_spinner</parent>
+      <child>central_cylinder_pivot::cylinder_pivot</child>
+      <axis>
+        <xyz>0 0 1.0</xyz>
+      </axis>
+    </joint>
+  </model>
+</sdf>
