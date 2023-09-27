@@ -285,6 +285,7 @@
           <density>1</density>
         </density_change>
       </graded_buoyancy>
+      <enable>Tethys</enable>
     </plugin>
     <plugin
       filename="gz-sim-dvl-system"
