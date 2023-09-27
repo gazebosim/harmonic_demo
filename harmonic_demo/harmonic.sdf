@@ -294,6 +294,10 @@
         <!-- tethys dvl -->
         <keyframe type='cam_pose' pose="-42.53 61.317 0.9 0 0.461 -0.6"/>
 
+        <!-- spheres -->
+        <keyframe type='cam_pose' pose="-41.24 64.49 0.43 0 -0.047 0.0"/>
+
+
       </plugin>
     </gui>
 
@@ -333,6 +337,7 @@
           <density>1</density>
         </density_change>
       </graded_buoyancy>
+      <enable>Tethys</enable>
     </plugin>
     <plugin
       filename="gz-sim-dvl-system"
@@ -341,7 +346,7 @@
 
     <gravity>0 0 -9.8</gravity>
     <scene>
-      <ambient>1 1 1</ambient>
+      <ambient>0.3 0.3 0.3</ambient>
       <grid>false</grid>
       <sky></sky>
     </scene>
@@ -433,6 +438,26 @@
       <pose>-35 65 0 0 0 0</pose>
       <uri>Spheres</uri>
     </include>
+    <model name="platform">
+      <static>true</static>
+      <pose>-35 65 -1.6 0 0 0</pose>
+      <link name="link">
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>5 5 0.5</size>
+            </box>
+          </geometry>
+        </visual>
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>5 5 0.5</size>
+            </box>
+          </geometry>
+        </collision>
+      </link>
+    </model>
     <include>
       <name>Terrain</name>
       <uri>Terrain</uri>
