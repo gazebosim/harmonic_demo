@@ -429,6 +429,11 @@
       <pose>0 0 0 0 0 0</pose>
     </include>
     <include>
+      <name>Spheres</name>
+      <pose>-35 65 0 0 0 0</pose>
+      <uri>Spheres</uri>
+    </include>
+    <include>
       <name>Terrain</name>
       <uri>Terrain</uri>
     </include>
