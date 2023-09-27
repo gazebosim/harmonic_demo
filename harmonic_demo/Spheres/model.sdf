@@ -1,0 +1,79 @@
+<?xml version='1.0' ?>
+<sdf version="1.6">
+  <model name="spheres">
+       <link name="sphere_no_added_mass">
+        <inertial>
+          <inertia>
+            <ixx>0.1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.1</iyy>
+            <iyz>0</iyz>
+            <izz>0.1</izz>
+          </inertia>
+          <mass>1.0</mass>
+        </inertial>
+        <collision name="sphere_no_added_mass_collision">
+          <geometry>
+            <sphere>
+              <radius>0.5</radius>
+            </sphere>
+          </geometry>
+        </collision>
+
+        <visual name="sphere_no_added_mass_visual">
+          <geometry>
+            <sphere>
+              <radius>0.5</radius>
+            </sphere>
+          </geometry>
+          <material>
+            <ambient>0 1 0 1</ambient>
+            <diffuse>0 1 0 1</diffuse>
+            <specular>0 1 0 1</specular>
+          </material>
+        </visual>
+      </link>
+
+      <link name="sphere_with_added_mass">
+      <pose relative_to="sphere_no_added_mass">0 -1 0 0 0 0</pose>
+        <inertial>
+          <inertia>
+            <ixx>0.1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.1</iyy>
+            <iyz>0</iyz>
+            <izz>0.1</izz>
+          </inertia>
+          <mass>1.0</mass>
+          <fluid_added_mass>
+            <xx>261.666</xx>
+            <yy>261.666</yy>
+            <zz>261.666</zz>
+          </fluid_added_mass>
+        </inertial>
+        <collision name="sphere_with_added_mass_collision">
+          <geometry>
+            <sphere>
+              <radius>0.5</radius>
+            </sphere>
+          </geometry>
+        </collision>
+
+        <visual name="sphere_with_added_mass_visual">
+          <geometry>
+            <sphere>
+              <radius>0.5</radius>
+            </sphere>
+          </geometry>
+          <material>
+            <ambient>0 0 1 1</ambient>
+            <diffuse>0 0 1 1</diffuse>
+            <specular>0 0 1 1</specular>
+          </material>
+        </visual>
+      </link>
+
+  </model>
+</sdf>
