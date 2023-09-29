@@ -285,6 +285,7 @@
           <density>1</density>
         </density_change>
       </graded_buoyancy>
+      <enable>Tethys</enable>
     </plugin>
     <plugin
       filename="gz-sim-dvl-system"
@@ -374,6 +375,31 @@
       <uri>Coast Waves 2</uri>
       <pose>0 0 0 0 0 0</pose>
     </include>
+    <include>
+      <name>Spheres</name>
+      <pose>-35 65 0 0 0 0</pose>
+      <uri>Spheres</uri>
+    </include>
+    <model name="spheres_platform">
+      <static>true</static>
+      <pose>-35 64.5 -1.6 0 0 0</pose>
+      <link name="link">
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>5 5 0.5</size>
+            </box>
+          </geometry>
+        </visual>
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>5 5 0.5</size>
+            </box>
+          </geometry>
+        </collision>
+      </link>
+    </model>
     <include>
       <name>Terrain</name>
       <uri>Terrain</uri>
